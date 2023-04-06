@@ -56,6 +56,7 @@ export default class Camera extends EventEmitter {
   }
 
   update() {
+    this.emit("update");
     window.requestAnimationFrame(() => this.update());
   }
 }
