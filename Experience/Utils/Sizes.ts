@@ -1,19 +1,24 @@
-export default class Sizes {
-  width: number;
-  height: number;
-  aspect: number;
-  pixelRatio: number;
+import { EventEmitter } from "events";
 
-  constructor() { //construction of window
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
-    this.aspect = this.width/this.height;
-    this.pixelRatio = Math.min(window.devicePixelRatio, 2);
+export default class Sizes extends EventEmitter {
+    width: number;
+    height: number;
+    aspect: number;
+    pixelRatio: number;
 
-    window.addEventListener("resize", () => { //resizing
-      this.width = window.innerWidth;
-      this.height = window.innerHeight;
-      this.aspect = this.width/this.height;
-    })
-  }
+    constructor() { //construction of window
+        super();
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.aspect = this.width/this.height;
+        this.pixelRatio = Math.min(window.devicePixelRatio, 2);
+
+        window.addEventListener("resize", () => { //resizing
+            this.width = window.innerWidth;
+            this.height = window.innerHeight;
+            this.aspect = this.width/this.height;
+            this.pixelRatio = Math.min(window.devicePixelRatio, 2);
+            this.emit("resize");
+        })
+    }
 }
