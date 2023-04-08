@@ -16,7 +16,6 @@ export default class Renderer {
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
 
-        console.log(this.camera, this.camera.perspectiveCamera)
         this.setRenderer();
     }
 
@@ -28,7 +27,7 @@ export default class Renderer {
         this.renderer.useLegacyLights = true;
         this.renderer.outputEncoding = THREE.sRGBEncoding;
         this.renderer.toneMapping = THREE.CineonToneMapping;
-        this.renderer.toneMappingExposure = 1.75;
+        this.renderer.toneMappingExposure = 2;
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);

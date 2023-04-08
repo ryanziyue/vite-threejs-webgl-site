@@ -3,22 +3,42 @@ import Experience from "../Experience";
 
 export default class Room {
     experience: any;
-    sizes: any;
     scene: any;
-    canvas: any;
-    camera: any;
-    renderer: any;
+    resources: any;
+    room: any;
+    actualRoom: any;
 
     constructor() {
         this.experience = new Experience("");
         this.scene = this.experience.scene;
-
-        const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-        const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        const cube = new THREE.Mesh( geometry, material );
-        this.scene.add( cube );
+        this.resources = this.experience.resources;
+        this.room = this.resources.items.room;
+        this.actualRoom = this.room.scene;
     
+        this.setModel();
+        this.setAnimation();
     }
+
+    setModel() {
+        this.actualRoom.children.forEach( (child: { castShadow: any; receiveShadow: any; }) => {
+            child.castShadow = true;
+            child.receiveShadow = true;
+
+            if (child instanceof THREE.Group) {
+                child.children.forEach((groupchild) => {
+                    groupchild.castShadow = true;
+                    groupchild.receiveShadow = true;
+                })
+            }
+
+        })
+        this.scene.add(this.actualRoom);
+    }
+
+    setAnimation() {
+        
+    }
+
     resize() {
 
     }

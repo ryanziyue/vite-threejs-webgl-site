@@ -12,7 +12,7 @@ export default class Resources extends EventEmitter {
     loaded: any;
     loaders: any;
 
-    constructor(assets: any) { //construction of window
+    constructor(assets: any) {
         super();
         this.experience = new Experience("");
         this.renderer = this.experience.renderer;
@@ -48,6 +48,7 @@ export default class Resources extends EventEmitter {
     singleAssetLoaded(asset: any, file: any) {
         this.items[asset.name] = file;
         this.loaded ++;
+
         if (this.loaded === this.queue) {
             this.emit("ready");
         }
