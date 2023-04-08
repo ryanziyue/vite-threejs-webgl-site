@@ -1,6 +1,4 @@
-import * as THREE from "three";
 import Experience from "../Experience";
-import GSAP from "gsap";
 
 export default class Controls {
     experience: any;
