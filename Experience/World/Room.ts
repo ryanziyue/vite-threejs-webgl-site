@@ -9,6 +9,7 @@ export default class Room {
     room: any;
     actualRoom: any;
     lerp: any;
+    rotation: any;
 
     constructor() {
         this.experience = new Experience("");
@@ -44,13 +45,10 @@ export default class Room {
         this.scene.add(this.actualRoom);
     }
 
-    setAnimation() {
-        
-    }
-
     onMouseMove() {
         window.addEventListener("mousemove", (e: any) => {
-            console.log(e);
+            this.rotation = (e.clientX - window.innerWidth / 2) * 2 / window.innerWidth;
+            this.lerp.target = this.rotation;
         })
     }
 
@@ -64,5 +62,9 @@ export default class Room {
             this.lerp.target,
             this.lerp.ease
         );
+
+        this.actualRoom.rotation.y = this.lerp.current;
     }
+
+    setAnimation() {}
 }

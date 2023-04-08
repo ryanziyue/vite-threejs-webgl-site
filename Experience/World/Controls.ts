@@ -7,7 +7,6 @@ export default class Controls {
     scene: any;
     resources: any;
     camera: any;
-    lerp: any;
 
     constructor() {
         this.experience = new Experience("");
