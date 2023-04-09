@@ -42,14 +42,14 @@ export default class Environment {
     switchTheme(theme: any) {
         if (theme === "dark") {
             GSAP.to(this.sunlight.color, {
-                r: 0.07058823529411765,
-                g: 0.10196078431372549,
-                b: 0.30196078431372547,
+                r: 14 / 255,
+                g: 21 / 255,
+                b: 61 / 255,
             });
             GSAP.to(this.ambientLight.color, {
-                r: 0.07058823529411765,
-                g: 0.10196078431372549,
-                b: 0.30196078431372547,
+                r: 14 / 255,
+                g: 21 / 255,
+                b: 61 / 255,
             });
             GSAP.to(this.sunlight, {
                 intensity: 0.78,
