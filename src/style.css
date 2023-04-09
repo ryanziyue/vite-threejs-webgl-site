@@ -8,6 +8,15 @@
 
 html, body {
 	font-family: "Montserrat", sans-serif;
+	color: var(--text-black);
+}
+
+:root {
+	--text-black: #333332;
+	--primary-cream: #FAF4E5;
+	--primary-green: #97B1AB;
+	--primary-lightgreen: #E8F3F1;
+	--primary-darkgreen: #527179;
 }
 
 /* ~~~~~~~~~~~EXPERIENCE~~~~~~~~~~~ */
@@ -16,11 +25,13 @@ html, body {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .experience-canvas {
 	width: 100%;
 	height: 100%;
+	
 }
 
 /* ~~~~~~~~~~~ACTUAL PAGE~~~~~~~~~~~ */
@@ -61,4 +72,114 @@ html, body {
 
 .hero-main-description {
 	font-size: 18px;
+}
+
+/* ~~~~~~~~~~~SECTION PROPERTIES~~~~~~~~~~~ */
+.section-intro-wrapper{
+	position: relative;
+	padding: 20% 5%;
+	border-bottom: 2px solid var(--primary-darkgreen);
+	padding-bottom: 400px;
+}
+
+.section-detail-wrapper{
+	position: relative;
+	padding: 20% 5%;
+}
+
+.section-heading {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.8;
+	margin-top: 64px;
+	color: var(--color-text);
+}
+
+.section-text {
+	line-height: 2;
+	margin-top: 18px;
+	font-size: 16px;
+	color: var(--color-text);
+}
+
+.section-intro-wrapper {
+	position: relative;
+	padding: 20% 5%;
+	border-bottom: 2px solid var(--primary-green);
+	padding-bottom: 400px;
+}
+
+.section-title {
+	position: relative;
+	color: var(--primary-green)
+}
+
+.section-title-text{
+	display: block;
+	font-size: 40px;
+	font-weight: 500;
+	transform-origin: left;
+	transform: skewY(25deg);
+	z-index: 5;
+	text-transform: uppercase;
+	color: var(--primary-darkgreen);
+}
+
+.styleOne,
+.styleTwo,
+.styleThree{
+	position: absolute;
+	display: block;
+	width: 100%;
+	max-width: 278px;
+	height: 60px;
+	border: 1px solid var(--primary-darkgreen);
+	transform-origin: left;
+	transform: skewY(-25deg);
+}
+
+.styleOne{
+	top: 0px;
+}
+
+.styleTwo{
+	top: 80px;
+}
+
+.styleThree{
+	top: 80px;
+	transform: skewY(25deg);
+	background-color: var(--primary-darkgreen);
+}
+
+.section-number{
+	position: absolute;
+	bottom: 15px;
+	right: 0;
+	color: var(--primary-darkgreen);
+	font-size: 24px;
+}
+
+
+/* ~~~~~~~~~~~SECTION FORMATTING~~~~~~~~~~~ */
+.section-margin {
+	height: 3000px;
+	width: 100%;
+}
+
+.section{
+	position: relative;
+	width: 50%;
+	padding: 1000px 4%;
+	margin: 0;
+	background-color: var(--primary-lightgreen);
+	overflow: hidden;
+}
+
+.left {
+	margin-right: auto;
+}
+
+.right {
+	margin-left: auto;
 }
