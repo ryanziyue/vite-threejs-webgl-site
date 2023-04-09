@@ -12,6 +12,7 @@ export default class World {
     canvas: any;
     camera: any;
     resources: any;
+    theme: any;
     room: any;
     floor: any;
     environment: any;
@@ -24,6 +25,7 @@ export default class World {
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
+        this.theme = this.experience.theme;
 
         this.resources.on("ready", () => {
             this.room = new Room();
@@ -32,6 +34,16 @@ export default class World {
             this.controls = new Controls();
             console.log("Created Room!")
         })
+
+        this.theme.on("switch", (theme: any) => {
+            this.switchTheme(theme);
+        })
+    }
+
+    switchTheme(theme: any) {
+        if (this.environment) {
+            this.environment.switchTheme(theme);
+        }
     }
 
     resize() {
