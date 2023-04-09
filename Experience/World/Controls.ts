@@ -28,13 +28,14 @@ export default class Controls {
     setPath() {
         this.timeline = new (GSAP.timeline as any)();
         this.timeline.to(this.room.position, {
-            x: this.sizes.width * 0.00094,
+            x: () => { return this.sizes.width * 0.0011},
             scrollTrigger: {
                 trigger: ".first-move",
                 markers: true,
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
+                invalidateOnRefresh: true,
             }
         });
     }
