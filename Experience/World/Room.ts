@@ -5,7 +5,7 @@ import GSAP from "gsap";
 // import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper";
 
 export default class Room {
-    experience: any;
+    experience: Experience;
     scene: any;
     resources: any;
     room: any;

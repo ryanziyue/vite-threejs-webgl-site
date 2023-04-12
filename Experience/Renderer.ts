@@ -5,7 +5,7 @@ import { PCFSoftShadowMap } from "three";
 import Experience from "./Experience";
 
 export default class Renderer {
-    experience: any;
+    experience: Experience;
     sizes: any;
     scene: any;
     canvas: any;

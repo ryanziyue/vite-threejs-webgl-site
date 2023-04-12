@@ -3,13 +3,14 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import Experience from "../Experience";
 
+
 export default class Resources extends EventEmitter {
-    experience: any;
+    experience: Experience;
     renderer: any;
     assets: any;
     items: any;
-    queue: any;
-    loaded: any;
+    queue: number;
+    loaded: number;
     loaders: any;
 
     constructor(assets: any) {

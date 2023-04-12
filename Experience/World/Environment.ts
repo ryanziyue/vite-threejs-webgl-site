@@ -4,7 +4,7 @@ import Experience from "../Experience";
 import GSAP from "gsap";
 
 export default class Environment {
-    experience: any;
+    experience: Experience;
     scene: any;
     resources: any;
     sunlight: any;

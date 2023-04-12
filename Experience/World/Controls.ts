@@ -3,7 +3,7 @@ import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default class Controls {
-    experience: any;
+    experience: Experience;
     scene: any;
     resources: any;
     camera: any;

@@ -4,7 +4,7 @@ import Experience from "./Experience";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export default class Camera{
-	experience: any;
+	experience: Experience;
 	sizes: any;
 	scene: any;
 	canvas: any;

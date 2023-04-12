@@ -4,7 +4,7 @@ import { Mesh } from "three";
 import Experience from "../Experience";
 
 export default class Floor {
-    experience: any;
+    experience: Experience;
     scene: any;
     geometry: any;
     material: any;

@@ -5,7 +5,7 @@ export default class Sizes extends EventEmitter {
     height: number;
     aspect: number;
     pixelRatio: number;
-    frustrum: any;
+    frustrum: number;
 
     constructor() { //construction of window
         super();

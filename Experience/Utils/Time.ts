@@ -1,10 +1,10 @@
 import { EventEmitter } from "events";
 
 export default class Time extends EventEmitter {
-	start: any;
-	current: any;
-	elapsed: any;
-	delta: any;
+	start: number;
+	current: number;
+	elapsed: number;
+	delta: number;
 
 	constructor() {
 		super();

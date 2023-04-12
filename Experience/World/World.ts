@@ -6,7 +6,7 @@ import Controls from "./Controls";
 import Environment from "./Environment";
 
 export default class World {
-    experience: any;
+    experience: Experience;
     sizes: any;
     scene: any;
     canvas: any;

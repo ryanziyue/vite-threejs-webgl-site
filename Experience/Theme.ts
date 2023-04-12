@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 
 export default class Theme extends EventEmitter {
-    theme: any;
+    theme: string;
     toggleButton: any;
     toggleCircle: any;
 
