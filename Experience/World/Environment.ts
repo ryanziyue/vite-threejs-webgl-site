@@ -1,4 +1,5 @@
-import * as THREE from "three";
+import { DirectionalLight } from "three";
+import { AmbientLight } from "three";
 import Experience from "../Experience";
 import GSAP from "gsap";
 
@@ -8,7 +9,7 @@ export default class Environment {
     resources: any;
     sunlight: any;
     ambientLight: any;
-    obj: any;
+    obj: object;
 
     constructor() {
         this.experience = new Experience("");
@@ -24,7 +25,7 @@ export default class Environment {
     }
 
     setSunlight() {
-        this.sunlight = new THREE.DirectionalLight("#FFFFFF", 1);
+        this.sunlight = new DirectionalLight("#FFFFFF", 1);
         this.sunlight.castShadow = true;
         this.sunlight.shadow.camera.far = 20;
         this.sunlight.shadow.mapSize.set(1024, 1024);
@@ -32,11 +33,8 @@ export default class Environment {
         this.sunlight.position.set(1.5, 7, 3);
         this.scene.add(this.sunlight);
 
-        this.ambientLight = new THREE.AmbientLight("#FFFFFF", 0.5);
+        this.ambientLight = new AmbientLight("#FFFFFF", 0.5);
         this.scene.add(this.ambientLight);
-
-        //const helper = new THREE.CameraHelper(this.sunlight.shadow.camera);
-        //this.scene.add(helper)
     }
 
     switchTheme(theme: any) {

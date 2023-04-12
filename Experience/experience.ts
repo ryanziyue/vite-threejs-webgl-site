@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import { Scene } from "three";
 
 import Sizes from "./Utils/Sizes";
 import Time from "./Utils/Time";
@@ -30,7 +30,7 @@ export default class Experience {
 
 		Experience.instance = this;
 		this.canvas = canvas;
-		this.scene = new THREE.Scene();
+		this.scene = new Scene();
 		this.sizes = new Sizes();
 		this.time = new Time();
 		this.camera = new Camera();
