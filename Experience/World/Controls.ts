@@ -28,7 +28,7 @@ export default class Controls {
     setPath() {
         this.timeline = new (GSAP.timeline as any)();
         this.timeline.to(this.room.position, {
-            x: () => { return this.sizes.width * 0.00105},
+            x: () => { return this.sizes.width * 0.00165},
             scrollTrigger: {
                 trigger: ".first-move",
                 markers: true,

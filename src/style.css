@@ -8,8 +8,16 @@
 
 html, body {
 	font-family: "Montserrat", sans-serif;
-	color: var(--text-black);
 }
+
+/*
+h1,
+section,
+p,
+span,
+svg {
+	transition: background-color 0.4s, color 0.4s;
+} */
 
 :root {
 	/* light theme */
@@ -276,4 +284,29 @@ html, body {
 .middle {
 	margin: auto;
 	width: 80%;
+}
+
+/* ~~~~~~~~~~~COLOUR OVERRIDING~~~~~~~~~~~ */
+.blue-text{
+	color: var(--color-blue)
+}
+
+.blue-border{
+	border-color: var(--color-blue);
+}
+
+.blue-background{
+background-color: var(--color-blue);
+}
+
+.green-text{
+	color: var(--color-green)
+}
+
+.green-border{
+	border-color: var(--color-green);
+}
+
+.green-background{
+	background-color: var(--color-green);
 }

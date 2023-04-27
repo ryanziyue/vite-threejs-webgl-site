@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   // Set the base URL of your application (e.g. /my-app/)
-    base: '/personal-website/',
+    base: '/',
 
   // Define your entry point file
   // (e.g. index.html, main.ts, main.js, etc.)
