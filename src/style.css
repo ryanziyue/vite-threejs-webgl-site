@@ -310,3 +310,12 @@ background-color: var(--color-blue);
 .green-background{
 	background-color: var(--color-green);
 }
+
+/* ~~~~~~~~~~~MISCELLANEOUS~~~~~~~~~~~ */
+.list {
+	padding-left: 20px;
+}
+
+.list-item {
+	padding-left: 20px;
+}
