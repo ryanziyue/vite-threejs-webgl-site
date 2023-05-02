@@ -10,14 +10,14 @@ html, body {
 	font-family: "Montserrat", sans-serif;
 }
 
-/*
+
 h1,
 section,
 p,
 span,
 svg {
 	transition: background-color 0.4s, color 0.4s;
-} */
+} 
 
 :root {
 	/* light theme */
