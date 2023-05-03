@@ -36,7 +36,7 @@ export default class Controls {
                     trigger: ".first-move",
                     start: "top top",
                     end: "bottom bottom",
-                    scrub: 0.6,
+                    scrub: 1,
                     invalidateOnRefresh: true,
                 },
             });
@@ -56,7 +56,7 @@ export default class Controls {
                     trigger: ".second-move",
                     start: "top top",
                     end: "bottom bottom",
-                    scrub: 0.6,
+                    scrub: 1,
                     invalidateOnRefresh: true,
                 },
             }).to(
