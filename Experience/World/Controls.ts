@@ -107,6 +107,19 @@ export default class Controls {
                         return 0;
                     },
                 }
+            ).to(
+                this.room.scale,
+                {
+                    x: () => {
+                        return 0.25;
+                    },
+                    y: () => {
+                        return 0.25;
+                    },
+                    z: () => {
+                        return 0.25;
+                    },
+                }
             );
 
         })
