@@ -7,7 +7,7 @@ import Experience from "./Experience";
 export default class Renderer {
     experience: Experience;
     sizes: any;
-    scene: any;
+    scene: THREE.Scene;
     canvas: any;
     camera: any;
     renderer: any;
@@ -25,7 +25,7 @@ export default class Renderer {
     setRenderer() {
         this.renderer = new WebGLRenderer({
             canvas: this.canvas,
-            antialias: false,
+            antialias: true,
         })
         
         this.renderer.useLegacyLights = true;
@@ -35,7 +35,7 @@ export default class Renderer {
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(this.sizes.pixelRatio * 0.8);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio);
     }
 
     resize() {

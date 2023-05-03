@@ -5,7 +5,7 @@ import GSAP from "gsap";
 
 export default class Environment {
     experience: Experience;
-    scene: any;
+    scene: THREE.Scene;
     resources: any;
     sunlight: any;
     ambientLight: any;

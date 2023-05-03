@@ -6,7 +6,7 @@ import GSAP from "gsap";
 
 export default class Room {
     experience: Experience;
-    scene: any;
+    scene: THREE.Scene;
     resources: any;
     room: any;
     actualRoom: any;

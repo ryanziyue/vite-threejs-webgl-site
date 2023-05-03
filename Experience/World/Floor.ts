@@ -5,7 +5,7 @@ import Experience from "../Experience";
 
 export default class Floor {
     experience: Experience;
-    scene: any;
+    scene: THREE.Scene;
     geometry: any;
     material: any;
     plane: any;

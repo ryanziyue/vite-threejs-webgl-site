@@ -13,7 +13,7 @@ import World from "./World/World";
 
 export default class Experience {
 	canvas: any;
-	scene: any;
+	scene!: THREE.Scene;
 	sizes: any;
 	time: any;
 	camera: any;

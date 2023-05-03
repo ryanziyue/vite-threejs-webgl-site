@@ -6,7 +6,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 export default class Camera{
 	experience: Experience;
 	sizes: any;
-	scene: any;
+	scene: THREE.Scene;
 	canvas: any;
 	perspectiveCamera: any;
 	orthographicCamera: any;

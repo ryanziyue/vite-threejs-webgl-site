@@ -8,7 +8,7 @@ import Environment from "./Environment";
 export default class World {
     experience: Experience;
     sizes: any;
-    scene: any;
+    scene: THREE.Scene;
     canvas: any;
     camera: any;
     resources: any;
