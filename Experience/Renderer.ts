@@ -7,7 +7,7 @@ import Experience from "./Experience";
 export default class Renderer {
     experience: Experience;
     sizes: any;
-    scene: THREE.Scene;
+    scene!: THREE.Scene;
     canvas: any;
     camera: any;
     renderer: any;

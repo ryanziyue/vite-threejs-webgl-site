@@ -4,13 +4,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default class Controls {
     experience: Experience;
-    scene: THREE.Scene;
+    scene!: THREE.Scene;
     resources: any;
     camera: THREE.Camera;
     room: any;
     sizes: any;
     firstMoveTimeline!: GSAPTimeline;
     secondMoveTimeline!: GSAPTimeline;
+    thirdMoveTimeline!: GSAPTimeline;
 
     constructor() {
         this.experience = new Experience("");
@@ -80,6 +81,30 @@ export default class Controls {
                     },
                     z: () => {
                         return 4;
+                    },
+                }
+            );
+
+            // Third Section
+            this.thirdMoveTimeline = new (GSAP.timeline as any)({
+                scrollTrigger: {
+                    trigger: ".third-move",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                },
+            }).to(
+                this.room.position,
+                {
+                    x: () => {
+                        return 0;
+                    },
+                    y: () => {
+                        return 0;
+                    },
+                    z: () => {
+                        return 0;
                     },
                 }
             );
