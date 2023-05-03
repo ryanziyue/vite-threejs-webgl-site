@@ -25,7 +25,7 @@ export default class Renderer {
     setRenderer() {
         this.renderer = new WebGLRenderer({
             canvas: this.canvas,
-            antialias: true,
+            antialias: false,
         })
         
         this.renderer.useLegacyLights = true;
@@ -35,7 +35,7 @@ export default class Renderer {
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(this.sizes.pixelRatio);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio * 0.8);
     }
 
     resize() {
