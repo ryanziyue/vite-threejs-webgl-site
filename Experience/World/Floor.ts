@@ -52,7 +52,20 @@ export default class Floor {
         this.circleFirst.scale.set(0,0,0);
         this.circleSecond.position.set(0,0,0);
         this.circleThird.position.set(0,0,0);
-        // this.scene.add( circle );
+
+        this.circleFirst.rotation.x =
+            this.circleSecond.rotation.x =
+            this.circleThird.rotation.x = 
+                -Math.PI / 2;
+
+        this.circleFirst.receiveShadow =
+        this.circleSecond.receiveShadow =
+        this.circleThird.receiveShadow =
+            true;
+
+        this.scene.add( this.circleFirst );
+        this.scene.add( this.circleSecond );
+        this.scene.add( this.circleThird );
     }
 
     resize() {
