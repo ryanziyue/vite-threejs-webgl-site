@@ -13,6 +13,9 @@ export default class Controls {
     firstMoveTimeline!: GSAPTimeline;
     secondMoveTimeline!: GSAPTimeline;
     thirdMoveTimeline!: GSAPTimeline;
+    sections: any;
+    progressWrapper: any;
+    progressBar: any;
 
     constructor() {
         this.experience = new Experience("");
@@ -72,8 +75,8 @@ export default class Controls {
             }).to(
                 this.room.position,
                 {
-                    x: -this.sizes.width * 0.0025,
-                    z: this.sizes.height * 0.0025,
+                    x: -this.sizes.width * 0.0028,
+                    z: this.sizes.height * 0.0042,
                 },
                 "second-desktop",
             ).to(
@@ -177,8 +180,6 @@ export default class Controls {
                 "second-mobile",
             );
 
-            
-
             // Third Section
             this.thirdMoveTimeline = new (GSAP.timeline as any)({
                 scrollTrigger: {
@@ -195,6 +196,68 @@ export default class Controls {
                 },
                 "third-mobile"
             );
+
+            
+            // all
+            all: () => {
+                this.sections = document.querySelectorAll(".section");
+                this.sections.forEach((section: any) => {
+                    this.progressWrapper =
+                        section.querySelector(".progress-wrapper");
+                    this.progressBar = section.querySelector(".progress-bar");
+
+                    if (section.classList.contains("right")) {
+                        GSAP.to(section, {
+                            borderTopLeftRadius: 10,
+                            scrollTrigger: {
+                                trigger: section,
+                                start: "top bottom",
+                                end: "top top",
+                                scrub: 0.6,
+                            },
+                        });
+                        GSAP.to(section, {
+                            borderBottomLeftRadius: 700,
+                            scrollTrigger: {
+                                trigger: section,
+                                start: "bottom bottom",
+                                end: "bottom top",
+                                scrub: 0.6,
+                            },
+                        });
+                    } else {
+                        GSAP.to(section, {
+                            borderTopRightRadius: 10,
+                            scrollTrigger: {
+                                trigger: section,
+                                start: "top bottom",
+                                end: "top top",
+                                scrub: 0.6,
+                            },
+                        });
+                        GSAP.to(section, {
+                            borderBottomRightRadius: 700,
+                            scrollTrigger: {
+                                trigger: section,
+                                start: "bottom bottom",
+                                end: "bottom top",
+                                scrub: 0.6,
+                            },
+                        });
+                    }
+                    GSAP.from(this.progressBar, {
+                        scaleY: 0,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top top",
+                            end: "bottom bottom",
+                            scrub: 0.4,
+                            pin: this.progressWrapper,
+                            pinSpacing: false,
+                        },
+                    });
+                }); 
+            }
         })
     }
 
