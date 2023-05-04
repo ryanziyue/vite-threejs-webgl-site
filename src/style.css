@@ -27,7 +27,7 @@ svg {
 	--color-button-light: #E8F3F1;
 
 	--color-green-light: #97B1AB;
-	--color-pink-light: #E5A1AA;
+	--color-pink-light: #f6b4bd;
 	--color-blue-light: #8395CD;
 	--color-darkgreen-light: #527179;
 
@@ -47,6 +47,7 @@ svg {
 	--color-green: var(--color-green-light);
 	--color-darkgreen: var(--color-darkgreen-light);
 	--color-blue: var(--color-blue-light);
+	--color-pink: var(--color-pink-light);
 }
 
 .dark-theme {
@@ -58,6 +59,7 @@ svg {
 	--color-green: var(--color-text-dark);
 	--color-darkgreen: var(--color-text-dark);
 	--color-blue: var(--color-text-dark);
+	--color-pink: var(--color-text-dark);
 }
 
 /* ~~~~~~~~~~~EXPERIENCE~~~~~~~~~~~ */
@@ -326,16 +328,16 @@ svg {
 background-color: var(--color-blue);
 }
 
-.green-text{
-	color: var(--color-green)
+.pink-text{
+	color: var(--color-pink)
 }
 
-.green-border{
-	border-color: var(--color-green);
+.pink-border{
+	border-color: var(--color-pink);
 }
 
-.green-background{
-	background-color: var(--color-green);
+.pink-background{
+	background-color: var(--color-pink);
 }
 
 /* ~~~~~~~~~~~MEDIA QUERIES~~~~~~~~~~~ */

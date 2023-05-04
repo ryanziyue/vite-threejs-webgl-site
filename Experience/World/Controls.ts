@@ -60,7 +60,16 @@ export default class Controls {
                 this.room.position,
                 {
                     x: this.sizes.width * 0.00100,
-                }
+                },
+                "first-desktop"
+            ).to(
+                this.room.scale,
+                {
+                    x: 1.1,
+                    y: 1.1,
+                    z: 1.1,
+                },
+                "first-desktop"
             );
 
             // Second Section
@@ -75,8 +84,8 @@ export default class Controls {
             }).to(
                 this.room.position,
                 {
-                    x: -this.sizes.width * 0.0028,
-                    z: this.sizes.height * 0.0042,
+                    x: -5.8,
+                    z: 5.5,
                 },
                 "second-desktop",
             ).to(
