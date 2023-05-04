@@ -273,18 +273,45 @@ svg {
 	overflow: hidden;
 }
 
-.left {
+.left{
 	margin-right: auto;
+	border-top-right-radius: 700px 700px;
+	border-bottom-right-radius: 0px 0px;
 }
 
-.right {
+.right{
 	margin-left: auto;
+	border-top-left-radius: 700px 700px;
+	border-bottom-left-radius: 0px 0px;
 }
 
-.middle {
-	margin: auto;
-	width: 80%;
+  /* Progress bars */
+.progress-wrapper{
+	height: 0;
+	width: 12px;
+	z-index: 9999;
 }
+
+.progress-bar-wrapper-left{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress-bar-wrapper-right{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.progress-bar{
+	height: 100vh;
+	width: 100%;
+	background-color: var(--color-green-light);
+	transform-origin: top center;
+	transform: scaleY(1);
+}
+
 
 /* ~~~~~~~~~~~COLOUR OVERRIDING~~~~~~~~~~~ */
 .blue-text{
@@ -312,9 +339,13 @@ background-color: var(--color-blue);
 }
 
 /* ~~~~~~~~~~~MEDIA QUERIES~~~~~~~~~~~ */
-@media (max-width: 968px) {
+@media (max-width: 799px) {
 	.section {
 		width: 100%;
+	}
+	.progress-bar-wrapper-left {
+		right: 0;
+		left: auto;
 	}
 }
 

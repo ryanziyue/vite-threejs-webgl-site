@@ -196,68 +196,68 @@ export default class Controls {
                 },
                 "third-mobile"
             );
-
+        });
             
-            // all
-            all: () => {
-                this.sections = document.querySelectorAll(".section");
-                this.sections.forEach((section: any) => {
-                    this.progressWrapper =
-                        section.querySelector(".progress-wrapper");
-                    this.progressBar = section.querySelector(".progress-bar");
+        // ALL
+        mm.add("", () => {
+            this.sections = document.querySelectorAll(".section");
+            this.sections.forEach((section: any) => {
+                this.progressWrapper =
+                    section.querySelector(".progress-wrapper");
+                this.progressBar = section.querySelector(".progress-bar");
+                console.log(this.progressBar);
 
-                    if (section.classList.contains("right")) {
-                        GSAP.to(section, {
-                            borderTopLeftRadius: 10,
-                            scrollTrigger: {
-                                trigger: section,
-                                start: "top bottom",
-                                end: "top top",
-                                scrub: 0.6,
-                            },
-                        });
-                        GSAP.to(section, {
-                            borderBottomLeftRadius: 700,
-                            scrollTrigger: {
-                                trigger: section,
-                                start: "bottom bottom",
-                                end: "bottom top",
-                                scrub: 0.6,
-                            },
-                        });
-                    } else {
-                        GSAP.to(section, {
-                            borderTopRightRadius: 10,
-                            scrollTrigger: {
-                                trigger: section,
-                                start: "top bottom",
-                                end: "top top",
-                                scrub: 0.6,
-                            },
-                        });
-                        GSAP.to(section, {
-                            borderBottomRightRadius: 700,
-                            scrollTrigger: {
-                                trigger: section,
-                                start: "bottom bottom",
-                                end: "bottom top",
-                                scrub: 0.6,
-                            },
-                        });
-                    }
-                    GSAP.from(this.progressBar, {
-                        scaleY: 0,
+                if (section.classList.contains("right")) {
+                    GSAP.to(section, {
+                        borderTopLeftRadius: 10,
                         scrollTrigger: {
                             trigger: section,
-                            start: "top top",
-                            end: "bottom bottom",
-                            scrub: 0.4,
-                            pin: this.progressWrapper,
-                            pinSpacing: false,
+                            start: "top bottom",
+                            end: "top top",
+                            scrub: 0.6,
                         },
                     });
-                }); 
-            }
+                    GSAP.to(section, {
+                        borderBottomLeftRadius: 700,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "bottom bottom",
+                            end: "bottom top",
+                            scrub: 0.6,
+                        },
+                    });
+                } else {
+                    GSAP.to(section, {
+                        borderTopRightRadius: 10,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top bottom",
+                            end: "top top",
+                            scrub: 0.6,
+                        },
+                    });
+                    GSAP.to(section, {
+                        borderBottomRightRadius: 700,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "bottom bottom",
+                            end: "bottom top",
+                            scrub: 0.6,
+                        },
+                    });
+                }
+                GSAP.from(this.progressBar, {
+                    scaleY: 0,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.4,
+                        pin: this.progressWrapper,
+                        pinSpacing: false,
+                    },
+                });
+            });
         })
     }
 
