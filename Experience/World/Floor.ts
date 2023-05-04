@@ -44,6 +44,14 @@ export default class Floor {
         this.circleFirst = new Mesh( geometry, material1 );
         this.circleSecond = new Mesh( geometry, material2 );
         this.circleThird = new Mesh( geometry, material3 );
+
+        this.circleFirst.position.y = -0.09;
+        this.circleSecond.position.y = -0.08;
+        this.circleThird.position.y = -0.07;
+
+        this.circleFirst.scale.set(0,0,0);
+        this.circleSecond.position.set(0,0,0);
+        this.circleThird.position.set(0,0,0);
         // this.scene.add( circle );
     }
 
