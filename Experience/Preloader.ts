@@ -24,7 +24,10 @@ export default class Preloader extends EventEmitter {
         this.world = this.experience.world;
         this.device = this.sizes.device;
 
-        
+        this.sizes.on("switchdevice", (device: any) => {
+            this.device = device;
+        })
+
         this.world.on("worldready", () => {
             this.setAssets();
             this.playIntro();

@@ -29,12 +29,14 @@ export default class Sizes extends EventEmitter {
             this.pixelRatio = Math.min(window.devicePixelRatio, 2);
             this.emit("resize");
 
-            if (this.width < 800) {
+            if (this.width < 800 && this.device !== "mobile") {
                 this.device = "mobile";
                 this.emit("switchdevice", this.device);
-            } else {
+                console.log("mobile")
+            } else if (this.width >= 800 && this.device !== "desktop"){
                 this.device = "desktop";
                 this.emit("switchdevice", this.device);
+                console.log("desktop")
             }
         })
     }

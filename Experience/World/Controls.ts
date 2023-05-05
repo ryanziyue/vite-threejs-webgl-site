@@ -110,7 +110,6 @@ export default class Controls {
 
         // DESKTOP STUFF
         mm.add("(min-width: 800px", () => {
-            console.log("desktop!");
             this.rectLight.width = 0.25;
             this.rectLight.height = 0.25;
             this.camera.orthographicCamera.position.set(0, 4.5, 5);
@@ -228,7 +227,6 @@ export default class Controls {
 
         // MOBILE STUFF
         mm.add("(max-width: 799px", () => {
-            console.log("mobile!");
             this.room.position.set(0, 0, 0);
             this.rectLight.width = 0.25;
             this.rectLight.height = 0.25;
