@@ -32,17 +32,19 @@ export default class Preloader extends EventEmitter {
     }
 
     setAssets() {
+        this.room = this.experience.world.room.actualRoom;
         this.roomChildren = this.experience.world.room.roomChildren;
+        console.log(this.roomChildren);
     }
 
     firstIntro() {
         this.timeline = new (GSAP.timeline as any);
         this.timeline.to(this.roomChildren.Cube.scale, {
-            x: 1.4,
-            y: 1.4,
-            z: 1.4,
+            x: 0.225,
+            y: 0.225,
+            z: 0.225,
             ease: "back.out(2.5)",
-            duration: 3
+            duration: 2,
         })
     }
 
