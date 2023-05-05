@@ -45,7 +45,11 @@ export default class Preloader extends EventEmitter {
             z: 0.225,
             ease: "back.out(2.5)",
             duration: 2,
-        })
+        }).to(this.room.position, {
+            x: -1,
+            ease: "power1.out",
+            duration: 0.7,
+        });
     }
 
     playIntro() {
