@@ -13,6 +13,8 @@ export default class Preloader extends EventEmitter {
     room: any;
     roomChildren: any;
     timeline: any;
+    secondTimeline: any;
+    firstScroll: any;
 
     constructor() { //construction of window
         super();
@@ -41,21 +43,103 @@ export default class Preloader extends EventEmitter {
     }
 
     firstIntro() {
-        this.timeline = new (GSAP.timeline as any);
-        this.timeline.to(this.roomChildren.Cube.scale, {
-            x: 0.225,
-            y: 0.225,
-            z: 0.225,
-            ease: "back.out(2.5)",
-            duration: 2,
-        }).to(this.room.position, {
-            x: -1,
-            ease: "power1.out",
-            duration: 0.7,
+        return new Promise((resolve: any) => {
+            this.timeline = new (GSAP.timeline as any);
+
+            if (this.device === "desktop") {
+                this.timeline.to(this.roomChildren.Cube.scale, {
+                    x: 0.2,
+                    y: 0.2,
+                    z: 0.2,
+                    ease: "back.out(2.5)",
+                    duration: 2,
+                }).to(this.room.position, {
+                    x: -1,
+                    ease: "power1.out",
+                    duration: 0.7,
+                    onComplete: resolve,
+                });
+            } else {
+                this.timeline.to(this.roomChildren.Cube.scale, {
+                    x: 0.2,
+                    y: 0.2,
+                    z: 0.2,
+                    ease: "back.out(2.5)",
+                    duration: 2,
+                }).to(this.room.position, {
+                    z: -1,
+                    ease: "power1.out",
+                    duration: 0.7,
+                    onComplete: resolve,
+                });
+            }
+            })        
+    }
+
+    secondIntro() {
+        return new Promise((resolve: any) => {
+            this.secondTimeline = new (GSAP.timeline as any);
+
+            this.secondTimeline.to(
+                this.room.position,
+                {
+                    x: 0,
+                    y: 0,
+                    z: 0,
+                    ease: "power1.out",
+                    duration: 0.7,
+                },
+                "match",
+                ).to(
+                this.roomChildren.Cube.rotation,
+                {
+                    y: 2 * Math.PI + Math.PI / 4,
+                },
+                "match",
+            ).to(
+                this.roomChildren.Cube.scale,
+                {
+                    x: 1,
+                    y: 1,
+                    z: 1,
+                },
+                "match",
+            ).to(
+                this.camera.orthographicCamera.position,
+                {
+                    y: 4.5,
+                },
+                "match",
+            ).to(
+                this.roomChildren.Cube.position,
+                {
+                    x: 0,
+                    y: 1.45794,
+                    z: -0.002677,
+                },
+                "match",
+            );
         });
     }
 
-    playIntro() {
-        this.firstIntro();
+    onScroll(e: any) {
+        if (e.deltaY > 0) {
+            this.removeEventListeners();
+            this.playSecondIntro();
+        }
+    }
+
+    removeEventListeners() {
+        window.removeEventListener("wheel", this.firstScroll);
+    }
+
+    async playIntro() {
+        await this.firstIntro();
+        this.firstScroll = this.onScroll.bind(this);
+        window.addEventListener("wheel", this.firstScroll);
+    }
+
+    async playSecondIntro() {
+        await this.secondIntro();
     }
 }

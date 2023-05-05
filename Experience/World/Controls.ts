@@ -112,7 +112,6 @@ export default class Controls {
         mm.add("(min-width: 800px", () => {
             this.rectLight.width = 0.25;
             this.rectLight.height = 0.25;
-            this.camera.orthographicCamera.position.set(0, 4.5, 5);
             this.room.position.set(0, 0, 0);
 
             // First Section
@@ -230,7 +229,6 @@ export default class Controls {
             this.room.position.set(0, 0, 0);
             this.rectLight.width = 0.25;
             this.rectLight.height = 0.25;
-            this.camera.orthographicCamera.position.set(0, 4.5, 5);
 
             // First Section
             this.firstMoveTimeline = new (GSAP.timeline as any)({
