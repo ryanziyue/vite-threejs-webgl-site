@@ -10,6 +10,7 @@ export default class Room {
     resources: any;
     room: any;
     actualRoom: any;
+    roomChildren: any;
     lerp: any;
     rotation: any;
 
@@ -19,6 +20,7 @@ export default class Room {
         this.resources = this.experience.resources;
         this.room = this.resources.items.room;
         this.actualRoom = this.room.scene;
+        this.roomChildren = {};
     
         this.lerp = {
             current: 0,
@@ -32,17 +34,32 @@ export default class Room {
     }
 
     setModel() {
-        this.actualRoom.children.forEach( (child: { castShadow: any; receiveShadow: any; }) => {
+        this.actualRoom.children.forEach( (child: { 
+                castShadow: boolean;
+                receiveShadow: boolean;
+                scale: any;
+                position: any;
+                rotation: any;
+                name: any;
+            }) => {
             child.castShadow = true;
             child.receiveShadow = true;
 
             if (child instanceof Group) {
-                child.children.forEach((groupchild) => {
+                child.children.forEach((groupchild: any) => {
                     groupchild.castShadow = true;
                     groupchild.receiveShadow = true;
                 })
             }
 
+            child.scale.set(0, 0, 0);
+            if (child.name==="Cube") {
+                child.scale.set(0.15, 0.15, 0.15);
+                child.position.set(0, 0.08, 0);
+                child.rotation.y = Math.PI / 4;
+            }
+            
+            this.roomChildren[child.name] = child;
         })
 
         const width = 0.25;
@@ -52,12 +69,16 @@ export default class Room {
         rectLight.position.set( 0.5643317699432373, 1.1841734552383423, -0.2813844382762909 );
         rectLight.lookAt(0.6643317699432373, 0.2441734552383423, 0.2413844382762909 );
         this.actualRoom.add( rectLight );
+        
+        this.roomChildren["rectLight"] = rectLight;
 
         // const rectLightHelper = new RectAreaLightHelper( rectLight );
         // rectLight.add( rectLightHelper );
 
         this.scene.add(this.actualRoom);
     }
+
+    setAnimation() {}
 
     onMouseMove() {
         window.addEventListener("mousemove", (e: any) => {
@@ -80,5 +101,5 @@ export default class Room {
         this.actualRoom.rotation.y = this.lerp.current;
     }
 
-    setAnimation() {}
+
 }

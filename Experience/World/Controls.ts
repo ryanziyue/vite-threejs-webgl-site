@@ -53,7 +53,7 @@ export default class Controls {
                 this.progressWrapper =
                     section.querySelector(".progress-wrapper");
                 this.progressBar = section.querySelector(".progress-bar");
-                console.log(this.progressBar);
+                // console.log(this.progressBar);
 
                 if (section.classList.contains("right")) {
                     GSAP.to(section, {

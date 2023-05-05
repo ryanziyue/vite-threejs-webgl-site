@@ -32,7 +32,7 @@ export default class Floor {
         this.plane = new Mesh(this.geometry, this.material);
         this.scene.add(this.plane);
         this.plane.rotation.x = - Math.PI / 2;
-        this.plane.position.y = -0.3;
+        this.plane.position.y = -0.1;
         this.plane.receiveShadow = true;
     }
 
@@ -45,12 +45,12 @@ export default class Floor {
         this.circleSecond = new Mesh( geometry, material2 );
         this.circleThird = new Mesh( geometry, material3 );
 
-        this.circleFirst.position.y = -0.29;
+        this.circleFirst.position.y = -0.09;
 
-        this.circleSecond.position.y = -0.28;
+        this.circleSecond.position.y = -0.08;
         this.circleSecond.position.x = 2.4;
 
-        this.circleThird.position.y = -0.27;
+        this.circleThird.position.y = -0.07;
 
         this.circleFirst.scale.set(0,0,0);
         this.circleSecond.scale.set(0,0,0);
