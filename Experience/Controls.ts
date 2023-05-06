@@ -1,4 +1,4 @@
-import Experience from "../Experience";
+import Experience from "./Experience";
 import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

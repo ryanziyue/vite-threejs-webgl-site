@@ -11,7 +11,7 @@ import Theme from "./Theme";
 import Preloader from "./Preloader";
 
 import World from "./World/World";
-import Controls from "./World/Controls";
+import Controls from "./Controls";
 
 export default class Experience {
 	canvas: any;

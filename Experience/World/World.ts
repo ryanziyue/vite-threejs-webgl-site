@@ -2,7 +2,7 @@ import Experience from "../Experience";
 
 import Room from "./Room"
 import Floor from "./Floor";
-import Controls from "./Controls";
+import Controls from "../Controls";
 import Environment from "./Environment";
 
 import { EventEmitter } from "events";

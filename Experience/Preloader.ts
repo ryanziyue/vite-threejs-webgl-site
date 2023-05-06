@@ -15,6 +15,10 @@ export default class Preloader extends EventEmitter {
     timeline: any;
     secondTimeline: any;
     firstScroll: any;
+    tempRoomChildren: any;
+    initialY: any;
+    touchStart: any;
+    touchMove: any;
 
     constructor() { //construction of window
         super();
@@ -91,6 +95,7 @@ export default class Preloader extends EventEmitter {
     secondIntro() {
         return new Promise((resolve: any) => {
             this.secondTimeline = new (GSAP.timeline as any);
+            this.tempRoomChildren = this.roomChildren;
 
             this.secondTimeline.to(
                 this.room.position,
@@ -99,12 +104,14 @@ export default class Preloader extends EventEmitter {
                     y: 0,
                     z: 0,
                     ease: "power1.out",
+                    duration: 1,
                 },
                 "match",
                 ).to(
                 this.roomChildren.Cube.rotation,
                 {
-                    y: 2 * Math.PI + Math.PI / 4,
+                    y: 4 * Math.PI + Math.PI / 4,
+                    duration: 1,
                 },
                 "match",
             ).to(
@@ -113,12 +120,15 @@ export default class Preloader extends EventEmitter {
                     x: 1.1,
                     y: 1.1,
                     z: 1.1,
+                    ease: "power1.out",
+                    duration: 1,
                 },
                 "match",
             ).to(
                 this.camera.orthographicCamera.position,
                 {
                     y: 4.5,
+                    duration: 1,
                 },
                 "match",
             ).to(
@@ -127,6 +137,7 @@ export default class Preloader extends EventEmitter {
                     x: 0,
                     y: 1.45794,
                     z: -0.002677,
+                    duration: 1,
                 },
                 "match",
             ).set(
@@ -136,7 +147,6 @@ export default class Preloader extends EventEmitter {
                     y: 0.7493097186088562,
                     z: 0.7493097186088562,
                     ease: "power1.out",
-                    delay: 0.4,
                 },
             ).to(
                 this.roomChildren.Cube.scale,
@@ -153,8 +163,223 @@ export default class Preloader extends EventEmitter {
                 },
                 "cubematch",
             );
-            delete this.roomChildren["Cube"];
-            console.log(this.roomChildren);
+            delete this.tempRoomChildren["Cube"];
+            delete this.tempRoomChildren["Room"];
+            
+            var count = 0
+            var keys = Object.keys(this.tempRoomChildren).sort();
+            console.log(keys);
+            while (count <= 4) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.1 * count,
+                    },
+                    "match1"
+                )
+                count += 1;
+            }
+            while (count <= 20) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.1 * (count),
+                    },
+                    "match1"
+                )
+                count += 1;
+            }
+            while (count <= 26) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.1 * (count),
+                    },
+                    "match1"
+                )
+                count += 1;
+            }
+
+            this.secondTimeline.to(
+                this.tempRoomChildren[keys[count]].scale,
+                {
+                    x: 0.7493097186088562,
+                    y: 0.7493097186088562,
+                    z: 0.7493097186088562,
+                    ease: "back.out(2.5)",
+                    duration: 0.15,
+                    delay: 0.05 * count,
+                },
+                "match1"
+            )
+            count += 1;
+
+            this.secondTimeline.to(
+                this.tempRoomChildren[keys[count]].scale,
+                {
+                    x: 0.7493097186088562,
+                    y: 0.7493097186088562,
+                    z: 0.7493097186088562,
+                    ease: "back.out(2.5)",
+                    duration: 0.15,
+                    delay: 0.05 * (count),
+                },
+                "match1"
+            ).to(
+                this.tempRoomChildren[keys[count]].rotation,
+                {
+                    y: 16 * Math.PI + Math.PI / 2,
+                    ease: "power2.out",
+                    duration: 3,
+                },
+                "match1"
+            )
+
+            count += 1;
+            
+            while (count <= 41) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.05 * (count),
+                    },
+                    "match1"
+                )
+                count += 1;
+            }
+
+            this.secondTimeline.to(
+                this.tempRoomChildren[keys[count]].scale,
+                {
+                    x: 0.7493097186088562,
+                    y: 0.7493097186088562,
+                    z: 0.7493097186088562,
+                    ease: "back.out(2.5)",
+                    duration: 0.15,
+                    delay: 0.05 * (count),
+                    onComplete: resolve,
+                },
+                "match1"
+            )
+            /*
+            while (count <= 4) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.1 * count,
+                    },
+                    "match1"
+                )
+                count += 1;
+            }
+            while (count <= 20) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.1 * (count - 5),
+                    },
+                    "match2"
+                )
+                count += 1;
+            }
+            while (count <= 26) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.1 * (count - 21),
+                    },
+                    "match3"
+                )
+                count += 1;
+            }
+
+            this.secondTimeline.to(
+                this.tempRoomChildren[keys[count]].scale,
+                {
+                    x: 0.7493097186088562,
+                    y: 0.7493097186088562,
+                    z: 0.7493097186088562,
+                    ease: "back.out(2.5)",
+                    duration: 0.15,
+                },
+                "match4"
+            )
+            count += 1;
+
+            this.secondTimeline.to(
+                this.tempRoomChildren[keys[count]].scale,
+                {
+                    x: 0.7493097186088562,
+                    y: 0.7493097186088562,
+                    z: 0.7493097186088562,
+                    ease: "back.out(2.5)",
+                    duration: 0.15,
+                    delay: 0.1 * (count - 28),
+                },
+                "match4"
+            ).to(
+                this.tempRoomChildren[keys[count]].rotation,
+                {
+                    y: 4 * Math.PI + Math.PI * 2 / 3,
+                    ease: "power2.out",
+                    duration: 3,
+                },
+                "match4"
+            )
+
+            count += 1;
+            
+            while (count <= 42) {
+                this.secondTimeline.to(
+                    this.tempRoomChildren[keys[count]].scale,
+                    {
+                        x: 0.7493097186088562,
+                        y: 0.7493097186088562,
+                        z: 0.7493097186088562,
+                        ease: "back.out(2.5)",
+                        duration: 0.15,
+                        delay: 0.15 * (count - 29),
+                    },
+                    "match4"
+                )
+                count += 1;
+            }
+            */
         });
     }
 
@@ -165,17 +390,38 @@ export default class Preloader extends EventEmitter {
         }
     }
 
+    onTouch(e: any) {
+        this.initialY = e.touches[0].clientY;
+    }
+
+    onTouchMove(e: any) {
+        let currentY = e.touches[0].clientY;
+        let difference = this.initialY - currentY;
+        if (difference > 0) {
+            this.removeEventListeners();
+            this.playSecondIntro();
+        }
+        this.initialY = null;
+    }
+
     removeEventListeners() {
         window.removeEventListener("wheel", this.firstScroll);
+        window.removeEventListener("touchstart", this.touchStart);
+        window.removeEventListener("touchmove", this.touchMove)
     }
 
     async playIntro() {
         await this.firstIntro();
         this.firstScroll = this.onScroll.bind(this);
+        this.touchStart = this.onTouch.bind(this);
+        this.touchMove = this.onTouchMove.bind(this);
         window.addEventListener("wheel", this.firstScroll);
+        window.addEventListener("touchstart", this.touchStart);
+        window.addEventListener("touchmove", this.touchMove)
     }
 
     async playSecondIntro() {
         await this.secondIntro();
+        this.emit("enablecontrols")
     }
 }
