@@ -133,7 +133,7 @@ export default class Controls {
             ).to(
                 this.room.position,
                 {
-                    x: 2.4,
+                    x: 2,
                 },
                 "first-desktop"
             ).to(

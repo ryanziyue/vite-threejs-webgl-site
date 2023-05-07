@@ -57,14 +57,14 @@ export default class Preloader extends EventEmitter {
             this.timeline = new (GSAP.timeline as any);
 
             if (this.device === "desktop") {
-                this.timeline.to(
+                this.timeline.set(
                     this.roomChildren.Cube.scale,
                     {
-                    x: 0.2,
-                    y: 0.2,
-                    z: 0.2,
-                    ease: "back.out(2.5)",
-                    duration: 2,
+                        x: 0.15,
+                        y: 0.15,
+                        z: 0.15,
+                        ease: "back.out(2.5)",
+                        duration: 2,
                     },
                 ).to(
                     this.room.position,
@@ -76,12 +76,12 @@ export default class Preloader extends EventEmitter {
                     }
                 );
             } else {
-                this.timeline.to(
+                this.timeline.set(
                     this.roomChildren.Cube.scale,
                     {
-                        x: 0.2,
-                        y: 0.2,
-                        z: 0.2,
+                        x: 0.15,
+                        y: 0.15,
+                        z: 0.15,
                         ease: "back.out(2.5)",
                         duration: 2,
                     }
@@ -103,6 +103,15 @@ export default class Preloader extends EventEmitter {
                     ease: "back.out(1.7)",
                     onComplete: resolve,
                 },
+            ).set(
+                this.roomChildren.Cube.scale,
+                {
+                    x: 0.15,
+                    y: 0.15,
+                    z: 0.15,
+                    ease: "back.out(2.5)",
+                    duration: 2,
+                },
             )
         });  
     }
@@ -113,14 +122,22 @@ export default class Preloader extends EventEmitter {
             this.secondTimeline = new (GSAP.timeline as any);
             this.tempRoomChildren = this.roomChildren;
 
-            this.secondTimeline
-            .to(
+            this.secondTimeline.to(
                 ".intro-text .animatediv",
                 {
                     yPercent: 100,
                     stagger: 0.05,
                     ease: "back.in(1.7)",
                 },
+                "same"
+            ).set(
+                this.roomChildren.Cube.scale,
+                {
+                    x: 0.15,
+                    y: 0.15,
+                    z: 0.15,
+                },
+                "same"
             ).to(
                 this.room.position,
                 {
@@ -131,7 +148,7 @@ export default class Preloader extends EventEmitter {
                     duration: 1,
                 },
                 "match",
-                ).to(
+            ).to(
                 this.roomChildren.Cube.rotation,
                 {
                     y: 4 * Math.PI + Math.PI / 4,
@@ -144,6 +161,7 @@ export default class Preloader extends EventEmitter {
                     x: 1.1,
                     y: 1.1,
                     z: 1.1,
+                    ease: "power1.out",
                     duration: 1,
                 },
                 "match",
@@ -204,26 +222,10 @@ export default class Preloader extends EventEmitter {
             );
 
             delete this.tempRoomChildren["Cube"];
-            delete this.tempRoomChildren["Room"];
             
             var count = 0
             var keys = Object.keys(this.tempRoomChildren).sort();
             console.log(keys);
-            while (count <= 4) {
-                this.secondTimeline.to(
-                    this.tempRoomChildren[keys[count]].scale,
-                    {
-                        x: 0.7493097186088562,
-                        y: 0.7493097186088562,
-                        z: 0.7493097186088562,
-                        ease: "back.out(2.5)",
-                        duration: 0.15,
-                        delay: 0.1 * count,
-                    },
-                    "match1"
-                )
-                count += 1;
-            }
             while (count <= 20) {
                 this.secondTimeline.to(
                     this.tempRoomChildren[keys[count]].scale,
@@ -292,7 +294,7 @@ export default class Preloader extends EventEmitter {
 
             count += 1;
             
-            while (count <= 41) {
+            while (count <= 42) {
                 this.secondTimeline.to(
                     this.tempRoomChildren[keys[count]].scale,
                     {
@@ -321,105 +323,6 @@ export default class Preloader extends EventEmitter {
                 },
                 "match1"
             )
-            /*
-            while (count <= 4) {
-                this.secondTimeline.to(
-                    this.tempRoomChildren[keys[count]].scale,
-                    {
-                        x: 0.7493097186088562,
-                        y: 0.7493097186088562,
-                        z: 0.7493097186088562,
-                        ease: "back.out(2.5)",
-                        duration: 0.15,
-                        delay: 0.1 * count,
-                    },
-                    "match1"
-                )
-                count += 1;
-            }
-            while (count <= 20) {
-                this.secondTimeline.to(
-                    this.tempRoomChildren[keys[count]].scale,
-                    {
-                        x: 0.7493097186088562,
-                        y: 0.7493097186088562,
-                        z: 0.7493097186088562,
-                        ease: "back.out(2.5)",
-                        duration: 0.15,
-                        delay: 0.1 * (count - 5),
-                    },
-                    "match2"
-                )
-                count += 1;
-            }
-            while (count <= 26) {
-                this.secondTimeline.to(
-                    this.tempRoomChildren[keys[count]].scale,
-                    {
-                        x: 0.7493097186088562,
-                        y: 0.7493097186088562,
-                        z: 0.7493097186088562,
-                        ease: "back.out(2.5)",
-                        duration: 0.15,
-                        delay: 0.1 * (count - 21),
-                    },
-                    "match3"
-                )
-                count += 1;
-            }
-
-            this.secondTimeline.to(
-                this.tempRoomChildren[keys[count]].scale,
-                {
-                    x: 0.7493097186088562,
-                    y: 0.7493097186088562,
-                    z: 0.7493097186088562,
-                    ease: "back.out(2.5)",
-                    duration: 0.15,
-                },
-                "match4"
-            )
-            count += 1;
-
-            this.secondTimeline.to(
-                this.tempRoomChildren[keys[count]].scale,
-                {
-                    x: 0.7493097186088562,
-                    y: 0.7493097186088562,
-                    z: 0.7493097186088562,
-                    ease: "back.out(2.5)",
-                    duration: 0.15,
-                    delay: 0.1 * (count - 28),
-                },
-                "match4"
-            ).to(
-                this.tempRoomChildren[keys[count]].rotation,
-                {
-                    y: 4 * Math.PI + Math.PI * 2 / 3,
-                    ease: "power2.out",
-                    duration: 3,
-                },
-                "match4"
-            )
-
-            count += 1;
-            
-            while (count <= 42) {
-                this.secondTimeline.to(
-                    this.tempRoomChildren[keys[count]].scale,
-                    {
-                        x: 0.7493097186088562,
-                        y: 0.7493097186088562,
-                        z: 0.7493097186088562,
-                        ease: "back.out(2.5)",
-                        duration: 0.15,
-                        delay: 0.15 * (count - 29),
-                    },
-                    "match4"
-                )
-                count += 1;
-            }
-            */
         });
     }
 
@@ -479,7 +382,7 @@ export default class Preloader extends EventEmitter {
     }
 
     scale() {
-        this.room.scale.set(0.7493097186088562, 0.7493097186088562, 0.7493097186088562);
+        this.room.scale.set(1, 1, 1);
     }
 
     update() {

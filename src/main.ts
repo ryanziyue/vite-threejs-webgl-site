@@ -2,6 +2,10 @@ import "./style.css";
 import Experience from "../Experience/Experience";
 import Lenis from "@studio-freight/lenis";
 
+window.onbeforeunload = function() {
+    window.scrollTo(0, 0);
+}
+
 const experience = new Experience(document.querySelector(".experience-canvas"));
 experience;
 
