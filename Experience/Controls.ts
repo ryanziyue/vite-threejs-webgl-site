@@ -36,11 +36,10 @@ export default class Controls {
             }
         })
         
+        document.querySelector<HTMLElement>(".page")!.style.overflow = "visible";
 
         GSAP.registerPlugin(ScrollTrigger);
-
         this.setScrollTrigger();
-
     }
 
     setScrollTrigger() {

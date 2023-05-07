@@ -61,7 +61,7 @@ export default class Room {
             */
 
             if (child.name==="Cube") {
-                child.scale.set(0.05, 0.05, 0.05);
+                child.scale.set(0.2, 0.2, 0.2);
                 child.position.set(0, 0.2, 0);
                 child.rotation.y = Math.PI / 4;
             }

@@ -9,9 +9,9 @@ import Camera from "./Camera";
 import Renderer from "./Renderer";
 import Theme from "./Theme";
 import Preloader from "./Preloader";
+import Controls from "./Controls";
 
 import World from "./World/World";
-import Controls from "./Controls";
 
 export default class Experience {
 	canvas: any;
@@ -65,6 +65,7 @@ export default class Experience {
 	}
 
 	update() {
+		this.preloader.update()
 		this.camera.update();
 		this.renderer.update();
 		this.world.update();

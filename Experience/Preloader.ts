@@ -1,6 +1,7 @@
 import { EventEmitter } from "events";
 import Experience from "./Experience";
 import GSAP from "gsap";
+import convert from "./Utils/Convert";
 
 export default class Preloader extends EventEmitter {
     experience: any;
@@ -19,6 +20,8 @@ export default class Preloader extends EventEmitter {
     initialY: any;
     touchStart: any;
     touchMove: any;
+    moveFlag!: boolean;
+    scaleFlag!: boolean;
 
     constructor() { //construction of window
         super();
@@ -41,6 +44,9 @@ export default class Preloader extends EventEmitter {
     }
 
     setAssets() {
+        convert(document.querySelector(".intro-text"))
+        convert(document.querySelector(".hero-main-title"))
+        convert(document.querySelector(".hero-main-description"))
         this.room = this.experience.world.room.actualRoom;
         this.roomChildren = this.experience.world.room.roomChildren;
         console.log(this.roomChildren);
@@ -85,19 +91,37 @@ export default class Preloader extends EventEmitter {
                         z: -1,
                         ease: "power1.out",
                         duration: 0.7,
-                        onComplete: resolve,
                     }
                 );
             }
-            })        
+
+            this.timeline.to(
+                ".intro-text .animatediv",
+                {
+                    yPercent: -100,
+                    stagger: 0.05,
+                    ease: "back.out(1.7)",
+                    onComplete: resolve,
+                },
+            )
+        });  
     }
+
 
     secondIntro() {
         return new Promise((resolve: any) => {
             this.secondTimeline = new (GSAP.timeline as any);
             this.tempRoomChildren = this.roomChildren;
 
-            this.secondTimeline.to(
+            this.secondTimeline
+            .to(
+                ".intro-text .animatediv",
+                {
+                    yPercent: 100,
+                    stagger: 0.05,
+                    ease: "back.in(1.7)",
+                },
+            ).to(
                 this.room.position,
                 {
                     x: 0,
@@ -120,7 +144,6 @@ export default class Preloader extends EventEmitter {
                     x: 1.1,
                     y: 1.1,
                     z: 1.1,
-                    ease: "power1.out",
                     duration: 1,
                 },
                 "match",
@@ -162,7 +185,24 @@ export default class Preloader extends EventEmitter {
                     y: 1.1
                 },
                 "cubematch",
+            ).to(
+                ".hero-main-title .animatediv",
+                {
+                    yPercent: -100,
+                    stagger: 0.05,
+                    ease: "back.out(1.7)",
+                },
+                "match1"
+            ).to(
+                ".hero-main-description .animatediv",
+                {
+                    yPercent: -100,
+                    stagger: 0.05,
+                    ease: "back.out(1.7)",
+                },
+                "match1"
             );
+
             delete this.tempRoomChildren["Cube"];
             delete this.tempRoomChildren["Room"];
             
@@ -412,6 +452,7 @@ export default class Preloader extends EventEmitter {
 
     async playIntro() {
         await this.firstIntro();
+        this.moveFlag = true;
         this.firstScroll = this.onScroll.bind(this);
         this.touchStart = this.onTouch.bind(this);
         this.touchMove = this.onTouchMove.bind(this);
@@ -421,7 +462,33 @@ export default class Preloader extends EventEmitter {
     }
 
     async playSecondIntro() {
+        this.moveFlag = false;
+        this.scaleFlag = true;
         await this.secondIntro();
-        this.emit("enablecontrols")
+        this.scaleFlag = false;
+        console.log("GO!");
+        this.emit("enablecontrols");
+    }
+
+    move() {
+        if (this.device === "desktop") {
+            this.room.position.set(-1, 0, 0);
+        } else {
+            this.room.position.set(0, 0, -1);
+        }
+    }
+
+    scale() {
+        this.room.scale.set(0.7493097186088562, 0.7493097186088562, 0.7493097186088562);
+    }
+
+    update() {
+        if (this.moveFlag) {
+            this.move();
+        }
+
+        if (this.scaleFlag) {
+            this.scale();
+        }
     }
 }
