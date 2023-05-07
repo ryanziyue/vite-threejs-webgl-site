@@ -86,7 +86,7 @@ export default class Preloader extends EventEmitter {
                     }
                 );
             } else {
-                this.timeline.set(
+                this.timeline.to(
                     this.roomChildren.Cube.scale,
                     {
                         x: 0.15,
@@ -151,7 +151,7 @@ export default class Preloader extends EventEmitter {
                     opacity: 0,
                 },
                 "labelmatch"
-            ).set(
+            ).to(
                 this.roomChildren.Cube.scale,
                 {
                     x: 0.15,
@@ -202,7 +202,7 @@ export default class Preloader extends EventEmitter {
                     duration: 1,
                 },
                 "match",
-            ).set(
+            ).to(
                 this.roomChildren.Room.scale,
                 {
                     x: 0.7493097186088562,
