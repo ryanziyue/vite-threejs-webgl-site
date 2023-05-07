@@ -102,16 +102,9 @@ export default class Preloader extends EventEmitter {
                     ease: "back.out(1.7)",
                     onComplete: resolve,
                 },
-            ).set(
-                this.roomChildren.Cube.scale,
-                {
-                    x: 0.15,
-                    y: 0.15,
-                    z: 0.15,
-                    ease: "back.out(2.5)",
-                    duration: 2,
-                },
-            )
+            );
+
+
         });  
     }
 

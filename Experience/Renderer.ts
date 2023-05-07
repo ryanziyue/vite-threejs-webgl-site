@@ -52,7 +52,7 @@ export default class Renderer {
         // this.renderer.setViewport(
         //     this.sizes.width - this.sizes.width / 3,
         //     this.sizes.height - this.sizes.height / 3,
-        //     this.sizes.width / 3,
+        //     this. / 3,
         //     this.sizes.height / 3
         // );
 
