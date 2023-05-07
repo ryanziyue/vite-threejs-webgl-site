@@ -56,8 +56,19 @@ export default class Preloader extends EventEmitter {
         return new Promise((resolve: any) => {
             this.timeline = new (GSAP.timeline as any);
 
+            this.timeline.to(
+                    ".preloader",
+                    {
+                        opacity: 0,
+                        delay: 1,
+                        onComplete: () => {
+                            document.querySelector<HTMLElement>(".preloader")!.classList.add("hidden");
+                        }
+                    },
+                )
+
             if (this.device === "desktop") {
-                this.timeline.set(
+                this.timeline.to(
                     this.roomChildren.Cube.scale,
                     {
                         x: 0.15,
@@ -100,8 +111,20 @@ export default class Preloader extends EventEmitter {
                     yPercent: -100,
                     stagger: 0.05,
                     ease: "back.out(1.7)",
+                },
+            ).to(
+                ".arrow-svg-wrapper",
+                {
+                    opacity: 1,
+                },
+                "labelmatch"
+            ).to(
+                ".toggle-bar",
+                {
+                    opacity: 1,
                     onComplete: resolve,
                 },
+                "labelmatch"
             );
 
 
@@ -122,6 +145,12 @@ export default class Preloader extends EventEmitter {
                     ease: "back.in(1.7)",
                 },
                 "same"
+            ).to(
+                ".arrow-svg-wrapper",
+                {
+                    opacity: 0,
+                },
+                "labelmatch"
             ).set(
                 this.roomChildren.Cube.scale,
                 {
@@ -310,9 +339,15 @@ export default class Preloader extends EventEmitter {
                     z: 0.7493097186088562,
                     ease: "back.out(2.5)",
                     duration: 0.15,
+                },
+            ).to(
+                ".arrow-svg-wrapper",
+                {
+                    opacity: 1,
                     onComplete: resolve,
                 },
-            )
+                "labelmatch1"
+            );
         });
     }
 
