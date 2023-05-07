@@ -72,7 +72,6 @@ export default class Preloader extends EventEmitter {
                         x: -1,
                         ease: "power1.out",
                         duration: 0.7,
-                        onComplete: resolve,
                     }
                 );
             } else {
@@ -318,10 +317,8 @@ export default class Preloader extends EventEmitter {
                     z: 0.7493097186088562,
                     ease: "back.out(2.5)",
                     duration: 0.15,
-                    delay: 0.05 * (count),
                     onComplete: resolve,
                 },
-                "match1"
             )
         });
     }
