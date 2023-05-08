@@ -262,10 +262,12 @@ svg {
 
 .hero-main-title {
 	font-size: 64px;
+	display: flex;
 }
 
 .hero-main-description {
 	font-size: 18px;
+	display: flex;
 }
 
 /* ~~~~~~~~~~~SECTION PROPERTIES~~~~~~~~~~~ */
@@ -451,7 +453,7 @@ svg {
 		font-size: 32px;
 	}
 	.hero-main-description{
-		font-size: 18px;
+		font-size: 14px;
 	}
 }
 
