@@ -12,12 +12,14 @@ export default class Camera{
 	orthographicCamera: any;
 	controls: any;
 	helper: any;
+	renderer: any;
 
 	constructor() {
 		this.experience = new Experience("");
 		this.sizes = this.experience.sizes;
 		this.scene = this.experience.scene;
 		this.canvas = this.experience.canvas;
+		this.renderer = this.experience.renderer;
 
 		this.createPerspectiveCamera();
 		this.createOrthographicCamera();
@@ -26,7 +28,7 @@ export default class Camera{
 
 	createPerspectiveCamera() {
 		this.perspectiveCamera = new PerspectiveCamera(
-			35, this.sizes.aspect, 0.1, 1000
+			5, this.sizes.aspect, 0.1, 0.5
 		);
 		this.scene.add(this.perspectiveCamera);
 		this.perspectiveCamera.position.x = 29;

@@ -206,14 +206,8 @@ export default class Controls {
             ).to(
                 this.room.position,
                 {
-                    x: 3.3,
-                    z: 0,
-                },
-                "third-desktop"
-            ).to(
-                this.camera.position,
-                {
-                    y: 7,
+                    x: 3.5,
+                    z: 3.3,
                 },
                 "third-desktop"
             ).to(

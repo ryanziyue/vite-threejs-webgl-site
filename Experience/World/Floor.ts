@@ -40,7 +40,7 @@ export default class Floor {
         const geometry = new CircleGeometry( 0.5, 64 ); 
         const material1 = new MeshStandardMaterial( { color: 0x244d32 } );
         const material2 = new MeshStandardMaterial( { color: 0x1f3063 } );
-        const material3 = new MeshStandardMaterial( { color: 0xf6b4bd } ); 
+        const material3 = new MeshStandardMaterial( { color: 0x783b43 } ); 
         this.circleFirst = new Mesh( geometry, material1 );
         this.circleSecond = new Mesh( geometry, material2 );
         this.circleThird = new Mesh( geometry, material3 );

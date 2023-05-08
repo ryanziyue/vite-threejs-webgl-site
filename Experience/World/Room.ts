@@ -69,13 +69,9 @@ export default class Room {
             this.roomChildren[child.name] = child;
         })
 
-        const width = 0.25;
-        const height = 0.25;
-        const intensity = 1;
-        const rectLight = new RectAreaLight( 0xffffff, intensity,  width, height );
+        const rectLight = new RectAreaLight( 0xffffff, 0, 0.25 , 0.25 );
         rectLight.position.set( 0.5643317699432373, 1.1841734552383423, -0.2813844382762909 );
         rectLight.lookAt(0.6643317699432373, 0.2441734552383423, 0.2413844382762909 );
-        rectLight.scale.set(0, 0, 0);
         this.actualRoom.add( rectLight );
         
         this.roomChildren["rectLight"] = rectLight;

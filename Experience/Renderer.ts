@@ -35,12 +35,12 @@ export default class Renderer {
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(this.sizes.pixelRatio);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio * 5 / 8);
     }
 
     resize() {
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(this.sizes.pixelRatio);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio * 5 / 8);
 
     }
 
@@ -52,7 +52,7 @@ export default class Renderer {
         // this.renderer.setViewport(
         //     this.sizes.width - this.sizes.width / 3,
         //     this.sizes.height - this.sizes.height / 3,
-        //     this. / 3,
+        //     this.sizes.width / 3,
         //     this.sizes.height / 3
         // );
 

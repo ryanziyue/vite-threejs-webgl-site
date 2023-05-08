@@ -27,8 +27,8 @@ export default class Environment {
     setSunlight() {
         this.sunlight = new DirectionalLight("#FFFFFF", 1);
         this.sunlight.castShadow = true;
-        this.sunlight.shadow.camera.far = 20;
-        this.sunlight.shadow.mapSize.set(1024, 1024);
+        this.sunlight.shadow.camera.far = 10;
+        this.sunlight.shadow.mapSize.set(512, 512);
         this.sunlight.shadow.normalBias = 0.05;
         this.sunlight.position.set(1.5, 7, 3);
         this.scene.add(this.sunlight);
