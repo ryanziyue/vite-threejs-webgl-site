@@ -330,16 +330,16 @@ export default class Preloader extends EventEmitter {
                 count += 1;
             }
 
-            this.secondTimeline.to(
-                this.tempRoomChildren[keys[count]].scale,
+            this.timeline.set(
+                this.tempRoomChildren[keys[count]],
                 {
-                    x: 0.7493097186088562,
-                    y: 0.7493097186088562,
-                    z: 0.7493097186088562,
-                    ease: "back.out(2.5)",
-                    duration: 0.15,
+                    intensity: 1,
+                    delay: 0.15 * (count),
                 },
-            ).to(
+                "match1"
+            )
+
+            this.secondTimeline.to(
                 ".arrow-svg-wrapper",
                 {
                     opacity: 1,
