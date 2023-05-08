@@ -37,6 +37,7 @@ export default class Controls {
         })
         
         document.querySelector<HTMLElement>(".page")!.style.overflow = "visible";
+        
         console.log("bruh");
 
         GSAP.registerPlugin(ScrollTrigger);

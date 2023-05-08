@@ -417,7 +417,7 @@ svg {
 }
 
 .blue-background{
-background-color: var(--color-blue);
+	background-color: var(--color-blue);
 }
 
 .pink-text{
@@ -441,8 +441,16 @@ background-color: var(--color-blue);
 		right: 0;
 		left: auto;
 	}
+	.hero-main{
+		bottom: 120px;
+	}
+	.hero-main-title{
+		font-size: 32px;
+	}
+	.hero-main-description{
+		font-size: 18px;
+	}
 }
-
 
 /* ~~~~~~~~~~~MISCELLANEOUS~~~~~~~~~~~ */
 .list {

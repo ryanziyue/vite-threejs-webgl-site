@@ -55,7 +55,7 @@ export default class Preloader extends EventEmitter {
     firstIntro() {
         return new Promise((resolve: any) => {
             this.timeline = new (GSAP.timeline as any);
-
+            this.timeline.set(".animatediv", {y: 0, yPercent: 100})
             this.timeline.to(
                     ".preloader",
                     {
@@ -108,7 +108,7 @@ export default class Preloader extends EventEmitter {
             this.timeline.to(
                 ".intro-text .animatediv",
                 {
-                    yPercent: -100,
+                    yPercent: 0,
                     stagger: 0.05,
                     ease: "back.out(1.7)",
                 },
@@ -227,7 +227,7 @@ export default class Preloader extends EventEmitter {
             ).to(
                 ".hero-main-title .animatediv",
                 {
-                    yPercent: -100,
+                    yPercent: 0,
                     stagger: 0.05,
                     ease: "back.out(1.7)",
                 },
@@ -235,7 +235,7 @@ export default class Preloader extends EventEmitter {
             ).to(
                 ".hero-main-description .animatediv",
                 {
-                    yPercent: -100,
+                    yPercent: 0,
                     stagger: 0.05,
                     ease: "back.out(1.7)",
                 },
@@ -374,6 +374,8 @@ export default class Preloader extends EventEmitter {
 
     removeEventListeners() {
         window.removeEventListener("wheel", this.firstScroll);
+        window.removeEventListener("mousewheel", this.firstScroll);
+        window.removeEventListener("DOMMouseScroll", this.firstScroll);
         window.removeEventListener("touchstart", this.touchStart);
         window.removeEventListener("touchmove", this.touchMove)
     }
@@ -385,6 +387,8 @@ export default class Preloader extends EventEmitter {
         this.touchStart = this.onTouch.bind(this);
         this.touchMove = this.onTouchMove.bind(this);
         window.addEventListener("wheel", this.firstScroll);
+        window.addEventListener("mousewheel", this.firstScroll);
+        window.addEventListener("DOMMouseScroll", this.firstScroll);
         window.addEventListener("touchstart", this.touchStart);
         window.addEventListener("touchmove", this.touchMove)
     }
