@@ -26,8 +26,11 @@ export default class Experience {
 	world: any;
 	controls: any;
 	static instance: any;
+	flag: boolean;
 
 	constructor(canvas: any) {
+		this.flag = false;
+
 		if (Experience.instance) {
 			return Experience.instance;
 		}
@@ -56,6 +59,7 @@ export default class Experience {
 			this.resize();
 		});
 
+		this.flag = true;
 	}
 
 	resize() {
