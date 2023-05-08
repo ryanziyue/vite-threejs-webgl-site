@@ -4,9 +4,11 @@ import Lenis from "@studio-freight/lenis";
 
 const experience = new Experience(document.querySelector(".experience-canvas"));
 
-if (experience.flag) {
+
+experience.on("startSmoothScroll", () => {
+    console.log("Started Smooth Scroll!")
     const lenis = new Lenis({
-        easing: (t) => (1 - Math.pow(1 - t, 5)),
+        easing: (t) => (1 - Math.pow(1 - t, 5)) / 4,
     })
     
     function raf(time: any) {
@@ -15,4 +17,6 @@ if (experience.flag) {
     }
     
     requestAnimationFrame(raf)
-}
+})
+
+

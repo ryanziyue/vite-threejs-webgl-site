@@ -49,7 +49,6 @@ export default class Preloader extends EventEmitter {
         convert(document.querySelector(".hero-main-description"))
         this.room = this.experience.world.room.actualRoom;
         this.roomChildren = this.experience.world.room.roomChildren;
-        console.log(this.roomChildren);
     }
 
     firstIntro() {
@@ -398,7 +397,6 @@ export default class Preloader extends EventEmitter {
         this.scaleFlag = true;
         await this.secondIntro();
         this.scaleFlag = false;
-        console.log("GO!");
         this.emit("enablecontrols");
     }
 

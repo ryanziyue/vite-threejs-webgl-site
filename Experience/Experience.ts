@@ -12,8 +12,9 @@ import Preloader from "./Preloader";
 import Controls from "./Controls";
 
 import World from "./World/World";
+import { EventEmitter } from "events";
 
-export default class Experience {
+export default class Experience extends EventEmitter{
 	canvas: any;
 	scene!: THREE.Scene;
 	sizes: any;
@@ -26,10 +27,9 @@ export default class Experience {
 	world: any;
 	controls: any;
 	static instance: any;
-	flag: boolean;
 
 	constructor(canvas: any) {
-		this.flag = false;
+		super();
 
 		if (Experience.instance) {
 			return Experience.instance;
@@ -49,6 +49,7 @@ export default class Experience {
 
 		this.preloader.on("enablecontrols", () => {
 			this.controls = new Controls();
+			this.emit("startSmoothScroll");
 		});
 
 		this.time.on("update", () => {
