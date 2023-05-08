@@ -37,7 +37,7 @@ export default class Controls {
         })
         
         document.querySelector<HTMLElement>(".page")!.style.overflow = "visible";
-        console.log("bruh");
+        this.experience.flag = true;
 
         GSAP.registerPlugin(ScrollTrigger);
         this.setScrollTrigger();
@@ -207,17 +207,17 @@ export default class Controls {
             ).to(
                 this.room.position,
                 {
-                    x: 0,
-                    y: 0,
+                    x: 2.3,
+                    y: -2,
                     z: 0,
                 },
                 "third-desktop"
             ).to(
                 this.room.scale,
                 {
-                    x: 4,
-                    y: 4,
-                    z: 4,
+                    x: 2.5,
+                    y: 2.5,
+                    z: 2.5,
                 },
                 "third-desktop"
             );
