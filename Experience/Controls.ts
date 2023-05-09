@@ -161,7 +161,8 @@ export default class Controls {
                     x: 25,
                     y: 25,
                     z: 25,
-                }
+                },
+                "second-desktop"
             ).to(
                 this.room.position,
                 {
@@ -262,7 +263,8 @@ export default class Controls {
                     x: 25,
                     y: 25,
                     z: 25,
-                }
+                },
+                "second-mobile"
             ).to(
                 this.room.scale,
                 {

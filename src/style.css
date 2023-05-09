@@ -465,3 +465,27 @@ svg {
 .list-item {
 	padding-left: 20px;
 }
+
+.contact-list {
+	list-style-type: none;
+}
+
+.contact-icon {
+	vertical-align: bottom;
+	margin-bottom: 2px;
+	margin-right: 2em;
+}
+
+.contact-link {
+	font-weight: 500;
+	color: var(--color-text);
+}
+
+.contact-text {
+	font-weight: 500;
+	color: var(--color-text);
+}
+
+.contact-margin {
+	height: 60px;
+}

@@ -35,12 +35,12 @@ export default class Renderer {
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(this.sizes.pixelRatio * 5 / 8);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio * 11 / 16);
     }
 
     resize() {
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(this.sizes.pixelRatio * 5 / 8);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio * 11 / 16);
 
     }
 
