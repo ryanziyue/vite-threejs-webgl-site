@@ -66,25 +66,6 @@ export default class Preloader extends EventEmitter {
                     },
                 )
 
-            if (this.device === "desktop") {
-                this.timeline.to(
-                    this.roomChildren.Cube.scale,
-                    {
-                        x: 0.15,
-                        y: 0.15,
-                        z: 0.15,
-                        ease: "back.out(2.5)",
-                        duration: 0.7,
-                    },
-                ).to(
-                    this.room.position,
-                    {
-                        x: -1,
-                        ease: "power1.out",
-                        duration: 0.7,
-                    }
-                );
-            } else {
                 this.timeline.to(
                     this.roomChildren.Cube.scale,
                     {
@@ -102,7 +83,44 @@ export default class Preloader extends EventEmitter {
                         duration: 0.7,
                     }
                 );
-            }
+                console.log(this.roomChildren.Cube.position);
+            // if (this.device === "desktop") {
+            //     this.timeline.to(
+            //         this.roomChildren.Cube.scale,
+            //         {
+            //             x: 0.15,
+            //             y: 0.15,
+            //             z: 0.15,
+            //             ease: "back.out(2.5)",
+            //             duration: 0.7,
+            //         },
+            //     ).to(
+            //         this.room.position,
+            //         {
+            //             x: -1,
+            //             ease: "power1.out",
+            //             duration: 0.7,
+            //         }
+            //     );
+            // } else {
+            //     this.timeline.to(
+            //         this.roomChildren.Cube.scale,
+            //         {
+            //             x: 0.15,
+            //             y: 0.15,
+            //             z: 0.15,
+            //             ease: "back.out(2.5)",
+            //             duration: 0.7,
+            //         }
+            //     ).to(
+            //         this.room.position,
+            //         {
+            //             z: -1,
+            //             ease: "power1.out",
+            //             duration: 0.7,
+            //         }
+            //     );
+            // }
 
             this.timeline.to(
                 ".intro-text .animatediv",
@@ -125,8 +143,7 @@ export default class Preloader extends EventEmitter {
                 },
                 "labelmatch"
             );
-
-
+            console.log(this.roomChildren.Cube.position);
         });  
     }
 
@@ -150,14 +167,6 @@ export default class Preloader extends EventEmitter {
                     opacity: 0,
                 },
                 "labelmatch"
-            ).to(
-                this.roomChildren.Cube.scale,
-                {
-                    x: 0.15,
-                    y: 0.15,
-                    z: 0.15,
-                },
-                "same"
             ).to(
                 this.room.position,
                 {
@@ -401,11 +410,13 @@ export default class Preloader extends EventEmitter {
     }
 
     move() {
-        if (this.device === "desktop") {
-            this.room.position.set(-1, 0, 0);
-        } else {
-            this.room.position.set(0, 0, -1);
-        }
+        this.room.position.set(0, 0, -1);
+        
+        // if (this.device === "desktop") {
+        //     this.room.position.set(-1, 0, 0);
+        // } else {
+        //     this.room.position.set(0, 0, -1);
+        // }
     }
 
     scale() {

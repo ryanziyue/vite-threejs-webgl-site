@@ -1,6 +1,6 @@
 import {
     PlaneGeometry, 
-    MeshStandardMaterial,
+    MeshLambertMaterial,
     Mesh,
     CircleGeometry,
 } from "three";
@@ -26,7 +26,7 @@ export default class Floor {
 
     setFloor() {
         this.geometry = new PlaneGeometry(100, 100);
-        this.material = new MeshStandardMaterial({
+        this.material = new MeshLambertMaterial({
             color: 0xffffff,
         })
         this.plane = new Mesh(this.geometry, this.material);
@@ -38,9 +38,9 @@ export default class Floor {
 
     setCircles() {
         const geometry = new CircleGeometry( 0.5, 64 ); 
-        const material1 = new MeshStandardMaterial( { color: 0x244d32 } );
-        const material2 = new MeshStandardMaterial( { color: 0x1f3063 } );
-        const material3 = new MeshStandardMaterial( { color: 0x783b43 } ); 
+        const material1 = new MeshLambertMaterial( { color: 0x244d32 } );
+        const material2 = new MeshLambertMaterial( { color: 0x1f3063 } );
+        const material3 = new MeshLambertMaterial( { color: 0x783b43 } ); 
         this.circleFirst = new Mesh( geometry, material1 );
         this.circleSecond = new Mesh( geometry, material2 );
         this.circleThird = new Mesh( geometry, material3 );
