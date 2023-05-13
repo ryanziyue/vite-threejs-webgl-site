@@ -53,8 +53,8 @@
 						</div>
 
 						<div class="hero-main">
-							<h1 class="hero-main-title">Ryan Cheng</h1>
-							<p class="hero-main-description">Student | Aspiring Engineer</p>
+							<h1 class="hero-main-title"> Ryan Cheng </h1>
+							<p class="hero-main-description"> Student | Aspiring Engineer </p>
 						</div>
 
 					</div>
@@ -132,10 +132,64 @@
 					</div>
 
 					<div class="section-detail-wrapper">
-						<h3 class="section-heading">Lorem Ipsum</h3>
-						<p class="section-text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quod aliquam repellat, laboriosam eius culpa neque sit voluptates exercitationem, adipisci, animi deserunt quaerat doloremque esse placeat ullam nemo soluta nihil.
+						<p class="contact-text">
+							Here are some of my more recent projects:
 						</p>
+						<ul class="section-text contact-list">
+							<li class="list-item first-project-list"> 
+								<a class="contact-link" target="_blank" href="https://github.com/nuggetbucket54/CanSat"> CanSat </a>
+								<p class="section-text project-text">
+									— a sounding rocket payload created for the advanced category of the Canadian CanSat
+									Design Competition. The TurkeyBurkey CanSat measures air temperature and pressure during freefall,
+									and seismic activity upon landing on the ground. To measure seismic activity, a process researched by
+									the Japanese Seismological Agency was adapted, using Fourier transforms to reduce system noise and improve
+									measurement accuracy. <br> <br>
+
+									Data is transmitted by LoRa radio through the Arduino Serial protocol to a ground station, where it is read by
+									pySerial and parsed into an xlsx file to be graphed by matplotlib. The CanSat won the "Science Mission Award", 
+									awarded to the most well-researched and scientifically sound science mission.
+								</p>
+							</li>
+
+							<li class="list-item project-list"> 
+								<a class="contact-link" target="_blank" href="https://github.com/nuggetbucket54/levelhead"> Levelhead </a>
+								<p class="section-text project-text">
+									— a computer vision-based app to help improve basketball dribbling practice efficacy. Dribbling drills are most
+									effective when the athlete's head is completely level, but this could be difficult to maintain when practicing by oneself.
+									Levelhead calculates the angle the user is facing and issues reminders when the user is facing suboptimal angle for 
+									basketball dribbling drills. <br> <br>
+
+									The entirety of Levelhead was built in python. Mediapipe was used to determine the points of the face necessary for the
+									perspective-n-point calcuation in OpenCV. Levelhead won the "Best High School Solo Hack" as well as the "Overall Hackathon Winner"
+									prizes.
+								</p>
+							</li>
+							
+							<li class="list-item project-list"> 
+								<a class="contact-link" target="_blank" href="https://github.com/nuggetbucket54/moneymoneyvr"> Cardboard++ </a>
+								<p class="section-text project-text">
+									— an accessible VR headset built on cardboard, arduino, and websockets for the vsHacks! hackathon. Cardboard++ converts
+									the user's head tilt to corresponding mouse movements and displays computer video output on a mobile device to create a
+									serviceable, budget VR experience. <br> <br>
+
+									Pitch and yaw of the user's head is measured and converted to mouse movement using pyautogui. Meanwhile, computer video output
+									is transformed to fit the VR video format and forwarded to a mobile device using a basic Node.JS site and the WebSocket protocol.
+									Cardboard++ won the runner-up prize of the vsHacks! hackathon.
+								</p>
+							</li>
+
+							<li class="list-item project-list"> 
+								<a class="contact-link" target="_blank" href="https://github.com/CrisCodesCrap/WaffleHacksTeamCLNN"> Artly </a>
+								<p class="section-text project-text">
+									— a social media concept developed for the WaffleHacks2022 hackathon. Users are able to create their own drawings on a TypeScript
+									canvas and draw on top of the artwork of others. Drawings and their derivations are then recommended to users based on a platform-wide 
+									voting system, thus creating a platform where original artwork is constantly promoted and encouraged. <br> <br>
+
+									The entirety of the site is built on Next.JS with TypeScript and styled with TailwindCSS. User data, containing account details and
+									drawings, are stored using Firebase. Artly won the "Best Hack for Connections" award and "Honorable Mention in Art & Music".
+								</p>
+							</li>
+						</ul>
 					</div>
 				</section>
 
@@ -153,13 +207,13 @@
 
 					<div class="section-intro-wrapper pink-text pink-border">
 						<h1 class="section-title pink-text pink-border">
-							<span class="section-title-text pink-text">Contact Me</span>
+							<span class="section-title-text pink-text"> Contact Me </span>
 							<div class="section-title-decoration styleOne pink-border"></div>
 							<div class="section-title-decoration styleTwo pink-border"></div>
 							<div class="section-title-decoration styleThree pink-background pink-border"></div>
 						</h1>
 
-						<span class="section-number pink-text">03</span>
+						<span class="section-number pink-text"> 03 </span>
 					</div>
 
 					<div class="section-detail-wrapper">
@@ -171,14 +225,14 @@
 								<svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960">
 									<path fill="currentColor" d="M140 896q-24 0-42-18t-18-42V316q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm340-302L140 371v465h680V371L480 594Zm0-60 336-218H145l335 218ZM140 371v-55 520-465Z"/>
 								</svg>
-								<a class="contact-link" href="mailto:ryan.zy.cheng@gmail.com"> ryan.zy.cheng@gmail.com </a>
+								<a class="contact-link" target="_blank" href="mailto:ryan.zy.cheng@gmail.com"> ryan.zy.cheng@gmail.com </a>
 							</li>
 
 							<li class="list-item"> 
 								<svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
 									<path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
 								</svg>
-								<a class="contact-link" href="https://github.com/nuggetbucket54"> nuggetbucket54 </a>
+								<a class="contact-link" target="_blank" href="https://github.com/nuggetbucket54"> nuggetbucket54 </a>
 							</li>
 
 							<li class="list-item"> 
