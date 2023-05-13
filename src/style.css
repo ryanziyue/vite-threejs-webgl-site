@@ -468,12 +468,15 @@ svg {
 	padding-left: 20px;
 }
 
-.first-project-list {
-	margin-top: 50px;
+.project-heading {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.8;
+	color: var(--color-text);
 }
 
-.project-header {
-	font-weight: 900;
+.first-project-list {
+	margin-top: 50px;
 }
 
 .project-list {
