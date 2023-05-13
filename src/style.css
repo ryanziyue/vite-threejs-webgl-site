@@ -472,8 +472,17 @@ svg {
 	margin-top: 50px;
 }
 
+.project-header {
+	font-weight: 900;
+}
+
 .project-list {
 	margin-top: 100px;
+}
+
+.project-link {
+	font-weight: 600;
+	color: var(--color-text);
 }
 
 .project-text {
