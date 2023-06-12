@@ -309,7 +309,8 @@ export default class Controls {
             ).to(
                 this.room.position,
                 {
-                    z: -4.5,
+                    x: 2,
+                    z: 2,
                 },
                 "third-mobile"
             );
