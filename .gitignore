@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Room model and stuff so nobody steals my thingies
+*.glb
