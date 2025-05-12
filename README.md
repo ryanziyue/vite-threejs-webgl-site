@@ -1,6 +1,8 @@
 # 🌐 Personal Website
 
-Welcome to my personal website! This site serves as a portfolio to showcase my projects, skills, and experiences. It was created as my high school capstone project and is a reflection of my passion for nature, art, and technology. The 3D model featured on the site was modeled by myself in Blender, and is based on my own personal room, blending elements of creativity and innovation into a digital space. 
+Welcome to my personal website! This site serves as a portfolio to showcase my projects, skills, and experiences. It was created as my high school capstone project and is a reflection of my passion for nature, art, and technology. The 3D model featured on the site was modeled by myself in Blender, and is based on my own personal room, blending elements of creativity and innovation into a digital space.
+
+Now that I've matured in my education and career, I realized that this site's form factor—though visually pleasing—may not communicate myself as clearly as I may like. As a result, I have decided to make the code open source for anybody looking to create something similar, while also showcasing my individual design and development skills.
 
 ## 📸 Preview
 
