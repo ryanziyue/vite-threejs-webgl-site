@@ -1,24 +1,26 @@
-# 🌐 Personal Website
+# 🌐 Ryan Cheng's Personal Website
 
-Welcome to my personal website! This site showcases who I am, what I do, and the projects I've worked on. It's built with modern web technologies and designed to be fast, responsive, and accessible.
+Welcome to my personal website! This site serves as a portfolio to showcase my projects, skills, and experiences. It's built with modern web technologies and designed to be fast, responsive, and visually engaging.
 
 ## 📸 Preview
 
-![Website Screenshot](./screenshot.png)
+![Website Screenshot](./public/snorlax-logo.png)
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript (or React/Vue/Svelte/etc.)
-- **Styling:** [Tailwind CSS / SCSS / Bootstrap / Custom CSS]
-- **Hosting:** [Vercel / Netlify / GitHub Pages / etc.]
+- **Frontend:** HTML, CSS, TypeScript
+- **3D Graphics:** [Three.js](https://threejs.org/)
+- **Animations:** [GSAP](https://greensock.com/gsap/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Hosting:** [Vercel](https://vercel.com/)
 
 ## 🚀 Features
 
-- ✨ Clean, minimalist design
-- 📱 Responsive layout for mobile and desktop
-- 📄 About, Portfolio/Projects, Blog, and Contact sections
-- 📧 Contact form with [EmailJS / Formspree / custom backend]
-- 🌙 Light/Dark mode toggle
+- ✨ Clean and minimalist design
+- 📱 Fully responsive for mobile and desktop
+- 🌌 Interactive 3D graphics powered by Three.js
+- 🎨 Light/Dark mode toggle
+- 📄 Sections for About, Projects, and Contact
+- 📧 Links to social media and email
 
 ## 📁 Folder Structure
-
