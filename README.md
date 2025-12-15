@@ -1,4 +1,4 @@
-# Ryan Cheng — 3D Portfolio Website (Open Source)
+# 3D Portfolio Website (Open Source)
 
 I built this WebGL site in high school as my capstone. It looks great, but the heavy 3D render isn’t ideal for quick recruiter drive‑bys. So it’s no longer my active portfolio — I’ve open‑sourced it as a creative/technical showcase others can learn from and remix.
 
