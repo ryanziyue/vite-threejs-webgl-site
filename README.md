@@ -1,33 +1,22 @@
-# 🌐 Personal Website
+# 🌐 Ryan Cheng — 3D Portfolio (Open Source)
 
-Welcome to my personal website! This site serves as a portfolio to showcase my projects, skills, and experiences. It was created as my high school capstone project and is a reflection of my passion for nature, art, and technology. The 3D model featured on the site was modeled by myself in Blender, and is based on my own personal room, blending elements of creativity and innovation into a digital space.
-
-Now that I've matured in my education and career, I realized that this site's form factor—though visually pleasing—may not communicate myself as clearly as I may like. As a result, I have decided to make the code open source for anybody looking to create something similar, while also showcasing my individual design and development skills.
-
-## 📸 Preview
-
-![Website Screenshot](./public/snorlax-logo.png)
+I built this WebGL site in high school as my capstone. It looks great, but the heavy 3D render isn’t ideal for quick recruiter drive‑bys. So it’s no longer my active portfolio — I’ve open‑sourced it as a creative/technical showcase others can learn from and remix.
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, TypeScript
-- **3D Graphics:** [Three.js](https://threejs.org/)
-- **Animations:** [GSAP](https://greensock.com/gsap/)
-- **Build Tool:** [Vite](https://vitejs.dev/)
-- **Hosting:** [Vercel](https://vercel.com/)
+- **Build:** Vite + TypeScript
+- **3D:** Three.js (custom `Experience`/`Renderer`, DRACO assets)
+- **Animation:** GSAP, Lenis
+- **Modeling:** Blender
+- **Hosting:** Vercel (Node.js ≥ 18)
 
-## 🚀 Features
+## 🚀 Run Locally
 
-- ✨ Clean and minimalist design
-- 📱 Fully responsive for mobile and desktop
-- 🌌 Interactive 3D graphics powered by Three.js
-- 🎨 Light/Dark mode toggle
+Prereqs: Node 18+. Assets live in `public/` (including `draco/` and `models/`).
 
-## 🤝 Contributing
-Contributions are welcome! If you'd like to contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (git checkout -b feature/your-feature-name).
-3. Commit your changes (git commit -m 'Add some feature').
-4. Push to the branch (git push origin feature/your-feature-name).
-5. Open a pull request.
+```bash
+npm install
+npm run dev      # start Vite dev server
+npm run build    # production build to dist/
+npm run preview  # local preview of dist/
+```
