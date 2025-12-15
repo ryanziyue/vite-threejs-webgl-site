@@ -70,7 +70,7 @@
 
 				<div class="section-intro-wrapper">
 					<h1 class="section-title">
-						<span class="section-title-text">About Me</span>
+						<span class="section-title-text">intro</span>
 						<div class="section-title-decoration styleOne"></div>
 						<div class="section-title-decoration styleTwo"></div>
 						<div class="section-title-decoration styleThree"></div>
@@ -82,34 +82,22 @@
 				<div class="section-detail-wrapper">
 					<h3 class="section-heading">Hey, I'm Ryan!</h3>
 					<p class="section-text">
-						An engineering student at UBC, I'm a fan of all things tech. Whether tinkering with 3D-modeling to create the models
-						you see here, or developing my next experimental project, I'm trying to teach myself the skills to create meaningful contributions to those close to me. <br> <br>
-						I still have no clue as to what I want to do in the future—only a large list of things I'd rather avoid... so keep an eye on my website to see where I go in life ✌️!
+						This was a website I made back in high school as part of my capstone project. It served as my portfolio website for quite some time, but eventually I realized that the long render times may not be desirable for recruiters who are just performing a cursory glance at my work. Additionally, the compute power required to render the WebGL also was not always satisfied on various devices. <br> <br>
+						Since making the site, I've decided to open source the code, and use this website more as a showcase of my creative and technical work.
 					</p>
 
-					<h3 class="section-heading">Experience</h3>
-					<ul class="section-text list">
-						<li class="list-item"> Python (4+ yrs)</li>
-						<li class="list-item"> C++, Arduino (~1 yr)</li>
-						<li class="list-item"> TypeScript, JavaScript, CSS, HTML (~1.5 yrs) </li>
-						<li class="list-item"> Miscellaneous frameworks of the above languages (e.g. Next.JS, Node.JS, TailwindCSS, Bootstrap, etc.) (~1 yr)</li>
-					</ul>
-
-					<h3 class="section-heading">Education</h3>
-					<h4 class="section-text">Eric Hamber Secondary School [2018-2023]</h4>
-					<ul class="section-text list">
-						<li class="list-item"> Math Club Co-President </li>
-						<li class="list-item"> Physics Olympics Co-President </li>
-						<li class="list-item"> Senior Wind Ensemble Principal/Bass Trombonist </li>
-						<li class="list-item"> Senior Jazz Ensemble Trombonist </li>
-						<li class="list-item"> Eric Hamber CanSat Team Engineer </li>
-					</ul>
-
-					<h4 class="section-text">University of British Columbia (UBC) [2023-]</h4>
-					<p class="section-subheading">Bachelor of Applied Science</p>
-					<ul class="section-text list">
-						<li class="list-item"> Presidential Scholar Award </li>
-					</ul>
+					<h3 class="section-heading">A bit about me...</h3>
+					<p class="section-text">
+						I'm currently a junior at the University of British Columbia studying Engineering Physics. However, much of my work experience and passion lies in software engineering. As a result, I've thoroughly enjoyed integrating the rigorous, inter-disciplinary curriculum of my major with my passion for computers. <br/> <br/>
+						You'd be surprised how much physics has to do with software and computing! Some discoveries off the top of my head include...
+						<ul class="section-text list">
+							<li class="list-item"> Semiconductors, which allow for solid-state electronics</li>
+							<li class="list-item"> Photoelectric effect, which forms the basis for digital cameras</li>
+							<li class="list-item"> The Blue LED, which allow for our beautiful modern screens and displays </li>
+							<li class="list-item"> Giant Magnetoresistance, which forms the basis for hard drives </li>
+							<li class="list-item"> Laser physics, which forms the foundation of the internet, allowing us to communicate (and for you to be here!) </li>
+						</ul>
+					</p>
 				</div>
 			</section>
 
@@ -127,7 +115,7 @@
 
 				<div class="section-intro-wrapper blue-text blue-border">
 					<h1 class="section-title blue-text blue-border">
-						<span class="section-title-text blue-text">My Work</span>
+						<span class="section-title-text blue-text">How I built this site</span>
 						<div class="section-title-decoration styleOne blue-border"></div>
 						<div class="section-title-decoration styleTwo blue-border"></div>
 						<div class="section-title-decoration styleThree blue-background blue-border"></div>
@@ -140,61 +128,10 @@
 					<h3 class="project-heading">
 						Here are some of my more recent projects:
 					</h3>
-					<ul class="section-text contact-list">
-						<li class="list-item first-project-list"> 
-							<a class="project-link" target="_blank" href="https://github.com/nuggetbucket54/CanSat"> CanSat </a>
-							<p class="section-text project-text">
-								— a sounding rocket payload created for the advanced category of the Canadian CanSat
-								Design Competition. The TurkeyBurkey CanSat measures air temperature and pressure during freefall,
-								and seismic activity upon landing on the ground. To measure seismic activity, a process researched by
-								the Japanese Seismological Agency was adapted, using Fourier transforms to reduce system noise and improve
-								measurement accuracy. <br> <br>
-
-								Data is transmitted by LoRa radio through the Arduino Serial protocol to a ground station, where it is read by
-								pySerial and parsed into an xlsx file to be graphed by matplotlib. The CanSat won the "Science Mission Award", 
-								awarded to the most well-researched and scientifically sound science mission.
-							</p>
-						</li>
-
-						<li class="list-item project-list"> 
-							<a class="project-link" target="_blank" href="https://github.com/nuggetbucket54/face-tracker"> Levelhead </a>
-							<p class="section-text project-text">
-								— a computer vision-based app to help improve basketball dribbling practice efficacy. Dribbling drills are most
-								effective when the athlete's head is completely level, but this could be difficult to maintain when practicing by oneself.
-								Levelhead calculates the angle the user is facing and issues reminders when the user is facing suboptimal angle for 
-								basketball dribbling drills. <br> <br>
-
-								The entirety of Levelhead was built in python. Mediapipe was used to determine the points of the face necessary for the
-								perspective-n-point calcuation in OpenCV. Levelhead won the "Best High School Solo Hack" as well as the "Overall Hackathon Winner"
-								prizes.
-							</p>
-						</li>
-						
-						<li class="list-item project-list"> 
-							<a class="project-link" target="_blank" href="https://github.com/nuggetbucket54/moneymoneyvr"> Cardboard++ </a>
-							<p class="section-text project-text">
-								— an accessible VR headset built on cardboard, arduino, and websockets for the vsHacks! hackathon. Cardboard++ converts
-								the user's head tilt to corresponding mouse movements and displays computer video output on a mobile device to create a
-								serviceable, budget VR experience. <br> <br>
-
-								Pitch and yaw of the user's head is measured and converted to mouse movement using pyautogui. Meanwhile, computer video output
-								is transformed to fit the VR video format and forwarded to a mobile device using a basic Node.JS site and the WebSocket protocol.
-								Cardboard++ won the runner-up prize of the vsHacks! hackathon.
-							</p>
-						</li>
-
-						<li class="list-item project-list"> 
-							<a class="project-link" target="_blank" href="https://github.com/CrisCodesCrap/WaffleHacksTeamCLNN"> Artly </a>
-							<p class="section-text project-text">
-								— a social media concept developed for the WaffleHacks2022 hackathon. Users are able to create their own drawings on a TypeScript
-								canvas and draw on top of the artwork of others. Drawings and their derivations are then recommended to users based on a platform-wide 
-								voting system, thus creating a platform where original artwork is constantly promoted and encouraged. <br> <br>
-
-								The entirety of the site is built on Next.JS with TypeScript and styled with TailwindCSS. User data, containing account details and
-								drawings, are stored using Firebase. Artly won the "Best Hack for Connections" award and "Honorable Mention in Art & Music".
-							</p>
-						</li>
-					</ul>
+					<p class="section-text">
+						This was a website I made back in high school as part of my capstone project. It served as my portfolio website for quite some time, but eventually I realized that the long render times may not be desirable for recruiters who are just performing a cursory glance at my work. Additionally, the compute power required to render the WebGL also was not always satisfied on various devices. <br> <br>
+						Since making the site, I've decided to open source the code, and use this website more as a showcase of my creative and technical work.
+					</p>
 				</div>
 			</section>
 
